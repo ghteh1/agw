@@ -19,7 +19,6 @@ enquiry through Resend. The browser never receives the Resend API key.
    | Variable | Value |
    | --- | --- |
    | `RESEND_API_KEY` | Secret — the private key from Resend, beginning `re_` |
-   | `CONTACT_TO_EMAIL` | Secret — inbox that should receive enquiries |
    | `CONTACT_FROM_EMAIL` | Secret — verified sender, e.g. `Asia Green Wood Website <enquiries@asiagreenwood.com>` |
 
 4. Select **Deploy** after adding the variables, submit the contact form, and reply to the received
@@ -51,3 +50,7 @@ then run `npx wrangler dev`. Keep `.dev.vars` out of version control.
 
 Resend requires the `CONTACT_FROM_EMAIL` domain to be verified before it will send
 production mail. Do not use a personal email address as the sender address.
+
+Plywood enquiries are sent to `lktan.agg@gmail.com` and copied to
+`lktan@asiagreenwood.com`. Biochar enquiries are sent to Mr Heng at
+`chengfa@asiagreenwood.com` and copied to `lktan.agg@gmail.com`.

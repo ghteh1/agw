@@ -1,6 +1,6 @@
 export async function onContactRequest(request, env) {
   try {
-    if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL || !env.CONTACT_FROM_EMAIL) {
+    if (!env.RESEND_API_KEY || !env.CONTACT_FROM_EMAIL) {
       console.error('Contact form is missing one or more Resend environment variables.');
       return json({ ok: false, error: 'Email service is not configured yet.' }, 503);
     }
@@ -27,6 +27,11 @@ export async function onContactRequest(request, env) {
       return json({ ok: false, error: 'Please enter a valid email address.' }, 400);
     }
 
+    const isBiocharEnquiry = interest.toLowerCase().includes('biochar');
+    const recipients = isBiocharEnquiry
+      ? { to: ['chengfa@asiagreenwood.com'], cc: ['lktan.agg@gmail.com'] }
+      : { to: ['lktan.agg@gmail.com'], cc: ['lktan@asiagreenwood.com'] };
+
     const html = `
       <h2>New enquiry from asiagreenwood.com</h2>
       <p><b>Name:</b> ${escapeHtml(name)}</p>
@@ -46,9 +51,10 @@ export async function onContactRequest(request, env) {
       },
       body: JSON.stringify({
         from: env.CONTACT_FROM_EMAIL,
-        to: [env.CONTACT_TO_EMAIL],
+        to: recipients.to,
+        cc: recipients.cc,
         reply_to: email,
-        subject: `New enquiry from ${name}${company ? ' — ' + company : ''}`,
+        subject: `New ${isBiocharEnquiry ? 'Biochar' : 'Plywood'} enquiry from ${name}${company ? ' — ' + company : ''}`,
         html,
       }),
     });
