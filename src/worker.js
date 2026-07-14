@@ -3,6 +3,7 @@ import { onContactRequest } from './contact.js';
 const ALLOWED_ORIGINS = new Set([
   'https://agw.guanghong-teh-914.workers.dev',
   'https://ghteh1.github.io',
+  'https://asiagreenwood.com',
 ]);
 
 export default {
