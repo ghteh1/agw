@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="assets/logomark.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Products — AsiaGreenWood · 东园森界</title>
+<meta name="description" content="Export-grade hardwood plywood, birch face plywood, JAS certified plywood and marine plywood from Asia Green Wood — responsibly sourced in Malaysia." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+</style>
+<style>
+  :root{
+    --bark:#4A2E18;--bark-2:#6B4423;--bark-3:#8A6A4A;
+    --cream:#F3EAD9;--cream-2:#E8DBC3;--paper:#FBF6EC;
+    --ink:#1F1915;--ink-2:#463A30;
+    --moss:#3E5A3C;--moss-2:#6B8260;
+    --rule:rgba(31,25,21,.14);
+    --primary:var(--bark);--primary-2:var(--bark-2);
+    --surface:var(--paper);--surface-2:var(--cream);
+    --ff-display:"Libre Caslon Display",ui-serif,Georgia,serif;
+    --ff-body:"Brandon Grotesque",system-ui,sans-serif;
+    --ff-mono:"JetBrains Mono",ui-monospace,monospace;
+    --ff-cn:"Noto Serif SC",serif;
+    --pad-x:clamp(24px,5vw,96px);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--ff-body);-webkit-font-smoothing:antialiased}
+  body{font-size:16px;line-height:1.55;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--ff-display);font-weight:400;letter-spacing:-.01em;margin:0;line-height:1.04}
+  h1{font-size:clamp(40px,6vw,96px)}
+  h2{font-size:clamp(28px,4vw,60px);line-height:1.06}
+  h3{font-size:clamp(18px,1.5vw,24px);line-height:1.18}
+  p{color:var(--ink-2);margin:0}
+  .eye{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-2);font-weight:500}
+  .lede{font-size:clamp(16px,1.1vw,18px);color:var(--ink-2);line-height:1.7}
+
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+  /* --- Nav --- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,backdrop-filter .3s}
+  header.nav.scrolled{background:color-mix(in oklab,var(--surface) 92%,transparent);backdrop-filter:blur(14px);border-bottom-color:var(--rule)}
+  .nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:20px var(--pad-x)}
+  .brand{display:flex;align-items:center}
+  .brand-mark img{height:60px;width:auto;object-fit:contain;transition:opacity .3s}
+  .nav-tag{justify-self:start;margin-left:16px;padding-left:20px;border-left:1px solid rgba(243,234,217,.35);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.85);transition:color .3s,border-color .3s}
+  header.nav.scrolled .nav-tag{color:var(--ink-2);border-left-color:var(--rule)}
+  .menu-trigger{display:flex;align-items:center;gap:14px;background:transparent;border:0;cursor:pointer;color:var(--cream);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:8px 4px;transition:color .3s}
+  header.nav.scrolled .menu-trigger{color:var(--ink)}
+  .menu-trigger .ham{display:inline-flex;flex-direction:column;gap:5px;width:26px}
+  .menu-trigger .ham i{display:block;height:1.5px;background:currentColor;transform-origin:center}
+  .menu-trigger .ham i:nth-child(1){width:100%}
+  .menu-trigger .ham i:nth-child(2){width:70%;align-self:flex-end}
+
+  /* --- Overlay menu --- */
+  .overlay-menu{position:fixed;inset:0;z-index:300;background:var(--ink);color:var(--cream);display:grid;grid-template-rows:auto 1fr auto;opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.2,.7,.2,1)}
+  .overlay-menu.open{opacity:1;pointer-events:auto}
+  .overlay-menu .omhead{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-bottom:1px solid rgba(243,234,217,.12)}
+  .mk{width:40px;height:40px;border-radius:50%;background:var(--cream);display:grid;place-items:center;overflow:hidden;flex-shrink:0}
+  .mk img{width:76%;height:76%;object-fit:contain}
+  .overlay-menu .close{background:transparent;border:0;color:var(--cream);cursor:pointer;display:flex;align-items:center;gap:14px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .close .xi{position:relative;width:22px;height:22px}
+  .close .xi::before,.close .xi::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:currentColor}
+  .close .xi::before{transform:rotate(45deg)}
+  .close .xi::after{transform:rotate(-45deg)}
+  .overlay-menu .ombody{display:grid;grid-template-columns:1.4fr 1fr;padding:clamp(40px,6vw,96px) var(--pad-x);gap:80px;align-items:center}
+  .omlinks{list-style:none;padding:0;margin:0}
+  .omlinks li{overflow:hidden;border-bottom:1px solid rgba(243,234,217,.08)}
+  .omlinks a{display:flex;align-items:baseline;gap:24px;padding:18px 0;font-family:var(--ff-display);font-size:clamp(30px,4vw,60px);line-height:1;color:var(--cream);transition:transform .3s,color .3s;transform:translateY(20px);opacity:0}
+  .overlay-menu.open .omlinks a{transform:translateY(0);opacity:1;transition-delay:calc(var(--i,0)*60ms + 150ms);transition-duration:.5s}
+  .omlinks a:hover{color:var(--bark-3);transform:translateX(12px) translateY(0)}
+  .omlinks .idx{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;color:rgba(243,234,217,.4);align-self:flex-start;padding-top:10px}
+  .omaside{border-left:1px solid rgba(243,234,217,.12);padding-left:60px;max-width:420px}
+  .omaside .eyem{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.5);margin-bottom:20px}
+  .omaside h4{font-family:var(--ff-display);font-size:24px;color:var(--cream);margin:0 0 12px;line-height:1.2}
+  .omaside p{color:rgba(243,234,217,.7);font-size:14px;line-height:1.65}
+  .omaside .cn{display:block;font-family:var(--ff-cn);font-size:13px;letter-spacing:.14em;margin-top:18px;color:rgba(243,234,217,.5)}
+  .omfoot{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-top:1px solid rgba(243,234,217,.12);font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55)}
+  .omfoot a{color:rgba(243,234,217,.8)}
+
+  /* --- Hero --- */
+  .hero{position:relative;height:80vh;min-height:520px;display:flex;align-items:flex-start;overflow:hidden;background:#000}
+  .hero-media{position:absolute;inset:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) contrast(1.1)}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,10,6,.75) 0%,rgba(15,10,6,.25) 55%,rgba(15,10,6,.7) 100%)}
+  .hero-copy{position:relative;z-index:2;padding:clamp(120px,18vh,200px) var(--pad-x) clamp(60px,8vw,100px);color:var(--cream)}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid rgba(243,234,217,.4);border-radius:999px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);backdrop-filter:blur(6px);margin-bottom:32px}
+  .chip .sq{width:6px;height:6px;background:var(--moss-2);border-radius:1px}
+  .hero-copy h1{color:var(--cream);max-width:20ch;margin-bottom:16px}
+  .hero-sub{font-family:var(--ff-cn);font-size:13px;letter-spacing:.18em;color:rgba(243,234,217,.7)}
+
+  /* --- Intro strip --- */
+  .intro-strip{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--rule)}
+  .intro-item{padding:clamp(24px,3vw,40px) clamp(20px,2.5vw,36px);border-right:1px solid var(--rule);position:relative}
+  .intro-item:last-child{border-right:0}
+  .intro-item .inum{font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;color:var(--primary-2);margin-bottom:12px}
+  .intro-item h4{font-family:var(--ff-display);font-size:clamp(16px,1.2vw,20px);color:var(--ink);margin-bottom:8px;line-height:1.15}
+  .intro-item p{font-size:12.5px;color:var(--ink-2);line-height:1.6}
+  .intro-item a{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--primary);padding-bottom:1px}
+
+  /* --- Sections --- */
+  section{padding-block:clamp(72px,9vw,140px);padding-inline:var(--pad-x);position:relative}
+
+  .sh{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:40px;margin-bottom:clamp(40px,5vw,64px);padding-bottom:22px;border-bottom:1px solid var(--rule)}
+  .sh .num{font-family:var(--ff-mono);font-size:12px;letter-spacing:.2em;color:var(--primary)}
+  .sh h2{max-width:22ch}
+  .sh .r{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+
+  /* --- Product grid --- */
+  .prod-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(48px,6vw,120px);align-items:start}
+  .prod-grid.flip{direction:rtl}
+  .prod-grid.flip > *{direction:ltr}
+  .prod-media{position:relative;overflow:hidden;border-radius:2px}
+  .prod-media .main-img{max-width:100%;object-fit:cover}
+  .prod-media .texture-img{width:100%;aspect-ratio:16/7;object-fit:cover;margin-top:12px;border-radius:2px;opacity:.9}
+  .prod-media .img-label{position:absolute;bottom:0;left:0;right:0;background:rgba(15,10,6,.76);color:var(--cream);padding:12px 16px;display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* --- Spec table --- */
+  .spec-table{display:grid;gap:0;margin:clamp(24px,3vw,40px) 0}
+  .spec-row{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+  .spec-row:first-child{border-top:1px solid var(--rule)}
+  .spec-key{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .spec-val{font-size:14px;color:var(--ink);line-height:1.5}
+
+  /* --- Feature tags --- */
+  .feat-list{display:flex;flex-direction:column;gap:0;margin-top:clamp(24px,3vw,36px)}
+  .feat-item{display:grid;grid-template-columns:20px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);align-items:start}
+  .feat-item:first-child{border-top:1px solid var(--rule)}
+  .feat-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);margin-top:5px;justify-self:center}
+  .feat-item p{font-size:13.5px;color:var(--ink-2);line-height:1.6}
+  .feat-item strong{color:var(--ink);font-weight:500}
+
+  /* --- Cert badges --- */
+  .cert-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(20px,2.5vw,32px)}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid var(--rule);border-radius:999px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);background:var(--paper)}
+  .badge.green{border-color:var(--moss-2);color:var(--moss)}
+
+  /* --- Sub-products (JAS) --- */
+  .sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,24px);margin-top:clamp(32px,4vw,48px)}
+  .sub-card{padding:clamp(20px,2.5vw,32px);border:1px solid var(--rule);border-radius:2px;background:var(--paper);transition:background .3s,box-shadow .3s}
+  .sub-card:hover{background:var(--cream);box-shadow:0 16px 48px -24px rgba(31,25,21,.18)}
+  .sub-card .sc-eye{font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:14px}
+  .sub-card h4{font-family:var(--ff-display);font-size:clamp(17px,1.3vw,22px);color:var(--ink);margin-bottom:12px;line-height:1.15}
+  .sub-card p{font-size:13px;color:var(--ink-2);line-height:1.65}
+  /* horizontal application card — square (1:1) image beside text */
+  .app-card{display:grid;grid-template-columns:clamp(200px,32%,320px) 1fr;gap:clamp(20px,3vw,40px);align-items:center}
+  .app-card .app-img{aspect-ratio:1/1;overflow:hidden;border-radius:2px}
+  .app-card .app-img img{width:100%;height:100%;object-fit:cover;display:block}
+  @media(max-width:640px){.app-card{grid-template-columns:1fr}}
+  .sub-spec{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+  .sub-spec span{display:block;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;color:var(--ink-2);margin-bottom:4px}
+
+  /* --- Applications --- */
+  .app-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,18px)}
+  .app-item{padding:clamp(16px,2vw,24px) clamp(12px,1.5vw,20px);border:1px solid var(--rule);border-radius:2px;text-align:center;transition:background .3s,box-shadow .3s;background:var(--paper)}
+  .app-item:hover{background:var(--cream);box-shadow:0 8px 28px -14px rgba(31,25,21,.15)}
+  .app-item .app-icon{font-size:22px;margin-bottom:10px}
+  .app-item p{font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+
+  /* --- CTA --- */
+  .cta-section{background:var(--primary);color:var(--cream);text-align:center;padding-bottom:clamp(60px,8vw,100px)}
+  .cta-section h2{color:var(--cream);margin-bottom:20px}
+  .cta-section .cta-body{color:rgba(243,234,217,.8);max-width:48ch;margin:0 auto 36px;font-size:clamp(15px,1.05vw,17px);line-height:1.7}
+  .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.03em;transition:all .2s;border:1px solid transparent;cursor:pointer;font-family:var(--ff-body)}
+  .btn.primary{background:var(--cream);color:var(--primary)}
+  .btn.primary:hover{background:var(--ink);color:var(--cream);transform:translateY(-1px)}
+  .btn.ghost{border-color:rgba(243,234,217,.5);color:var(--cream)}
+  .btn.ghost:hover{background:rgba(243,234,217,.1);transform:translateY(-1px)}
+
+  /* --- Curve --- */
+  .curve-hero{background:transparent;height:clamp(80px,8vw,120px);position:relative;z-index:40;margin-top:calc(-1 * clamp(80px,8vw,120px))}
+  .curve-hero svg{display:block;width:100%;height:100%}
+  .curve-footer{display:block;width:100%;height:clamp(100px,10vw,160px);line-height:0;margin:-1px 0;pointer-events:none;position:relative;z-index:50;background:var(--primary)}
+  .curve-footer svg{display:block;width:100%;height:100%}
+
+  /* --- Footer --- */
+  footer{background:var(--ink);color:rgba(243,234,217,.65);padding:48px var(--pad-x) 28px;font-size:13px}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(243,234,217,.15)}
+  .fcols h5{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55);margin:0 0 16px}
+  .fcols ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .fcols a:hover{color:var(--cream)}
+  .fbot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;color:rgba(243,234,217,.45)}
+
+  /* --- Responsive --- */
+  @media(max-width:1024px){
+    .intro-strip{grid-template-columns:1fr 1fr}
+    .intro-item:nth-child(2){border-right:0}
+    .intro-item:nth-child(3){border-top:1px solid var(--rule)}
+    .intro-item:nth-child(4){border-top:1px solid var(--rule);border-right:0}
+  }
+  @media(max-width:960px){
+    .prod-grid,.prod-grid.flip{grid-template-columns:1fr;direction:ltr}
+    .jas-outer{grid-template-columns:1fr !important}
+    .sub-grid{grid-template-columns:1fr 1fr}
+    #certifications .cert-docs{grid-template-columns:1fr !important}
+    .app-grid{grid-template-columns:repeat(3,1fr)}
+    .fcols{grid-template-columns:1fr 1fr}
+    .overlay-menu .ombody{grid-template-columns:1fr;gap:40px}
+    .omaside{border-left:0;padding-left:0;border-top:1px solid rgba(243,234,217,.12);padding-top:28px}
+    .sh{grid-template-columns:1fr;gap:6px;align-items:start}
+    .sh .r{display:none}
+    .nav-tag{display:none}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad-x)}
+    .brand-mark img{height:60px}
+    .menu-trigger>span:first-child{display:none}
+  }
+  @media(max-width:600px){
+    .intro-strip{grid-template-columns:1fr}
+    .intro-item{border-right:0;border-top:1px solid var(--rule)}
+    .intro-item:first-child{border-top:0}
+    .sub-grid{grid-template-columns:1fr}
+    #certifications .cert-docs{grid-template-columns:1fr !important}
+    .app-grid{grid-template-columns:repeat(2,1fr)}
+    .spec-row{grid-template-columns:1fr}
+    .fbot{flex-direction:column;gap:8px;text-align:center}
+    .btn-row{flex-direction:column;align-items:center}
+  }
+  @media(max-width:480px){
+    .fcols{grid-template-columns:1fr}
+    .sub-grid{grid-template-columns:1fr}
+    .app-grid{grid-template-columns:1fr}
+    .intro-strip{grid-template-columns:1fr}
+    .intro-item{border-right:0;border-top:1px solid var(--rule)}
+    .intro-item:first-child{border-top:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><img src="assets/logo-white.svg" id="navLogo" alt="AsiaGreenWood"/></span>
+    </a>
+    <span></span>
+    <button class="menu-trigger" id="menuOpen" aria-label="Open menu">
+      <span>Menu</span>
+      <span class="ham"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay menu -->
+<div class="overlay-menu" id="overlayMenu" role="dialog" aria-hidden="true">
+  <div class="omhead">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-white.svg" alt="Asia Green Wood" style="height:48px;width:auto;display:block"/>
+    </a>
+    <button class="close" id="menuClose" aria-label="Close menu"><span>Close</span><span class="xi"></span></button>
+  </div>
+  <div class="ombody">
+    <ul class="omlinks">
+      <li><a href="index.html" style="--i:0"><span class="idx">01</span> Home</a></li>
+      <li><a href="about.html" style="--i:1"><span class="idx">02</span> About</a></li>
+      <li><a href="environment.html" style="--i:2"><span class="idx">03</span> Environment</a></li>
+      <li><a href="products.html" style="--i:3"><span class="idx">04</span> Products</a></li>
+      <li><a href="index.html#contact" style="--i:4"><span class="idx">05</span> Contact Us</a></li>
+    </ul>
+    <aside class="omaside">
+      <div class="eyem">Get in touch</div>
+      <h4>Sungai Petani,<br>Kedah · Malaysia</h4>
+      <p>Plot 35–38, Kawasan Perusahaan Bakar Arang<br>+604 · 419 7111<br>lktan.agg@gmail.com</p>
+      <span class="cn">东园森界 · Crafted by nature, guided by love</span>
+    </aside>
+  </div>
+  <div class="omfoot">
+    <span>© 2026 Asia Green Wood Sdn Bhd</span>
+    <span><a href="#">EN</a> · <a href="#">中文</a></span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-media">
+    <img src="assets/prod-hero.jpg" alt="Veneer peeling machine in production"/>
+  </div>
+  <div class="hero-copy">
+    <div class="chip"><span class="sq"></span> Products · 产品</div>
+    <h1>Export-Grade<br><span style="font-style:italic">Plywood &amp; Veneer.</span></h1>
+    <p class="hero-sub" style="margin-top:16px">Manufactured in Kedah, Malaysia · Since 1964</p>
+  </div>
+</section>
+
+<!-- Hero curve -->
+<div class="curve-hero" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path d="M0,60 Q720,160 1440,60 L1440,120 L0,120 Z" fill="var(--paper)"/>
+  </svg>
+</div>
+
+<!-- Intro strip -->
+<div class="intro-strip">
+  <div class="intro-item">
+    <div class="inum">01</div>
+    <h4>Biochar</h4>
+    <p>Carbon-negative residue from wood waste via pyrolysis — for road base, concrete and sustainable agriculture.</p>
+    <a href="#biochar">View details →</a>
+  </div>
+  <div class="intro-item">
+    <div class="inum">02</div>
+    <h4>Hardwood Plywood</h4>
+    <p>Malaysian tropical hardwoods, dual-adhesive options, CE marked for global construction markets.</p>
+    <a href="#hardwood">View specs →</a>
+  </div>
+  <div class="intro-item">
+    <div class="inum">03</div>
+    <h4>Birch Face Plywood</h4>
+    <p>Whole-piece white birch face, UV coat prefinishing available, CARB Phase 2 compliant.</p>
+    <a href="#birch">View specs →</a>
+  </div>
+  <div class="intro-item">
+    <div class="inum">04</div>
+    <h4>JAS Certified Plywood</h4>
+    <p>Structural, concrete forming and general use — F★★★★ rated to Japan Agricultural Standard.</p>
+    <a href="#jas">View specs →</a>
+  </div>
+  <div class="intro-item">
+    <div class="inum">05</div>
+    <h4>Marine Plywood</h4>
+    <p>BS 1088 certified, Grade A face &amp; back, WBP bonding — the marine industry benchmark.</p>
+    <a href="#marine">View specs →</a>
+  </div>
+</div>
+
+<!-- 01 Biochar -->
+<section id="biochar">
+  <div class="sh">
+    <div class="num">01 / Product</div>
+    <h2>Biochar</h2>
+    <div class="r">Pyrolysis · Circular by-product</div>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-media">
+      <img class="main-img" src="assets/biochar.png" alt="Biochar — carbon residue from waste biomass" style="width:500px;height:500px;max-width:100%;object-fit:cover;border-radius:2px"/>
+    </div>
+    <div>
+      <img src="assets/biochar-infographic.png" alt="Biochar properties — highly porous, large surface area, high carbon content, lasts thousands of years" style="width:100%;height:auto;display:block;margin-bottom:clamp(20px,2.5vw,32px)"/>
+      <p class="lede" style="margin-bottom:clamp(20px,2.5vw,32px)">Biochar is a carbon residue derived from waste biomass through pyrolysis — heating at high temperature with limited oxygen. Produced alongside clean energy at our syngas and biochar facility, it turns wood waste into a high-value, carbon-negative material with applications across construction and agriculture.</p>
+
+      <div class="feat-list">
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Carbon-negative</strong> — locks captured carbon into a stable form that can be stored for over 1,000 years.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>From our own wood waste</strong> — a circular by-product of our energy generation, with zero residue to landfill.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Dual application</strong> — engineered for both civil infrastructure and high-yield sustainable agriculture.</p></div>
+      </div>
+
+      <div class="cert-badges">
+        <span class="badge green">Carbon Negative</span>
+        <span class="badge">Pyrolysis</span>
+        <span class="badge">Circular By-product</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-grid" style="margin-top:clamp(32px,4vw,56px);grid-template-columns:1fr;gap:clamp(16px,2vw,24px)">
+    <div class="sub-card app-card">
+      <div class="app-img">
+        <img src="assets/biochar-application-roadbase.png" alt="Biochar in road base and concrete"/>
+      </div>
+      <div>
+        <div class="sc-eye">Function 01 · Civil</div>
+        <h4>Road Base &amp; Concrete Applications</h4>
+        <p>By integrating biochar into road bases and concrete, we build stronger, more durable infrastructure with a significantly lower carbon footprint. It enhances road stability by improving load distribution and reducing moisture damage, and reinforces concrete structures without affecting setting times. Replacing traditional fillers with biochar (typically 0.5–5% by weight) delivers high-performance civil engineering solutions that are as resilient as they are responsible.</p>
+      </div>
+    </div>
+    <div class="sub-card app-card">
+      <div class="app-img">
+        <img src="assets/biochar-application-fertiliser.png" alt="Biochar blended with NPK fertiliser — field trial"/>
+      </div>
+      <div>
+        <div class="sc-eye">Function 02 · Agriculture</div>
+        <h4>Fertiliser &amp; Soil Application Performance</h4>
+        <p>Biochar acts as a powerful “nutrient sponge” that boosts fertiliser efficiency while protecting the environment. Blending just 2–5% with NPK fertilisers can reduce total fertiliser usage by 20–30%, locking in nutrients and releasing them slowly to plants. Fully compatible with organic, mineral and liquid fertilisers, it improves soil structure and stores carbon for over 1,000 years — a definitive solution for high-yield, sustainable agriculture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 Hardwood Plywood -->
+<section id="hardwood">
+  <div class="sh">
+    <div class="num">02 / Product</div>
+    <h2>Hardwood Plywood</h2>
+    <div class="r">Export Grade · WBP &amp; UF</div>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-media">
+      <img class="main-img" src="assets/hardwood-plywood.png" alt="Hardwood plywood veneer face" style="width:500px;height:500px;max-width:100%;object-fit:cover;border-radius:2px"/>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:clamp(20px,2.5vw,32px)">Our flagship export product — manufactured using selected Malaysian tropical hardwoods in red and white species. Produced with Japanese machinery and rigorously graded for uniformity in grade and colour, making it the most sought-after plywood on international markets.</p>
+
+      <div class="spec-table">
+        <div class="spec-row">
+          <span class="spec-key">Face / Back Grade</span>
+          <span class="spec-val">BB/CC · BB/BB · CC/CC</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Adhesive — Exterior</span>
+          <span class="spec-val">WBP Phenol Formaldehyde · EN314 Class 3</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Adhesive — Interior</span>
+          <span class="spec-val">UF Urea Formaldehyde · Type-2</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Formaldehyde Emission</span>
+          <span class="spec-val">E1 (both adhesive types)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Standard</span>
+          <span class="spec-val">CE Marking — EN 13986</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Sustainability</span>
+          <span class="spec-val">FSC® and PEFC® certified available</span>
+        </div>
+      </div>
+
+      <div class="feat-list">
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Dual-adhesive options</strong> — WBP for exterior and structural, UF for interior use, specified to order.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>E1 formaldehyde emission</strong> — compliant with the strictest indoor air quality standards across all markets.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>CARB Phase 2 &amp; EPA TSCA Title VI</strong> — approved for the USA market with full chain-of-custody documentation.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Uniform grade and colour</strong> — Malaysian red and white species selected for consistent panel appearance at scale.</p></div>
+      </div>
+
+      <div class="cert-badges">
+        <span class="badge green">FSC® Certified</span>
+        <span class="badge green">PEFC® Certified</span>
+        <span class="badge">CE · EN 13986</span>
+        <span class="badge">CARB Phase 2</span>
+        <span class="badge">EPA TSCA Title VI</span>
+        <span class="badge">E1 Emission</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Birch Face Plywood -->
+<section id="birch" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">03 / Product</div>
+    <h2>Birch Face Plywood</h2>
+    <div class="r">Whole Piece Face · UV Prefinish</div>
+  </div>
+  <div class="prod-grid flip">
+    <div class="prod-media">
+      <img class="main-img" src="assets/birch-plywood.png" alt="Birch face plywood veneer surface" style="width:500px;height:500px;max-width:100%;object-fit:cover;border-radius:2px"/>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:clamp(20px,2.5vw,32px)">Whole-piece white birch face veneer — no finger joints, no patches. The clean, pale aesthetic of natural birch makes this panel ideal for furniture, cabinetry, and interior fit-out. UV coat prefinishing is available on one or both faces for a ready-to-use surface direct from the mill.</p>
+
+      <div class="spec-table">
+        <div class="spec-row">
+          <span class="spec-key">Face Veneer</span>
+          <span class="spec-val">Whole Piece White Birch — no joints</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Inner Plies Adhesive</span>
+          <span class="spec-val">WBP Phenol Formaldehyde</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Face Adhesive</span>
+          <span class="spec-val">Type-2 (moisture resistant)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Grade Options</span>
+          <span class="spec-val">C+ · C · D+ · D · E</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Sheet Sizes</span>
+          <span class="spec-val">48″×96″ · 48.5″×96.5″ · 49″×97″</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Prefinish Option</span>
+          <span class="spec-val">UV coat — one or both faces</span>
+        </div>
+      </div>
+
+      <div class="feat-list">
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Whole-piece birch face</strong> — no finger joints or patches, delivering a premium clean surface every panel.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>UV coat prefinishing</strong> — hardwearing factory finish applied at source, reducing on-site processing time.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Five grade options</strong> — C+ through E allows specification matching for every quality and price point.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>American standard sizing</strong> — 48″×96″ and oversized 49″×97″ available for US construction specifications.</p></div>
+      </div>
+
+      <div class="cert-badges">
+        <span class="badge">CARB Phase 2</span>
+        <span class="badge">EPA TSCA Title VI</span>
+        <span class="badge green">FSC® Available</span>
+        <span class="badge green">PEFC® Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 JAS Certification Plywood -->
+<section id="jas">
+  <div class="sh">
+    <div class="num">04 / Product</div>
+    <h2>JAS Certification Plywood</h2>
+    <div class="r">Japan Agricultural Standard · F★★★★</div>
+  </div>
+  <div class="jas-outer" style="display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(48px,6vw,100px);align-items:start">
+    <div class="prod-media">
+      <img class="main-img" src="assets/jas-plywood.png" alt="JAS certified plywood veneer surface" style="width:100%;max-width:500px;height:auto;object-fit:contain;border-radius:2px"/>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:clamp(20px,2.5vw,32px)">Manufactured to meet Japan Agricultural Standard (JAS Law) requirements, our JAS plywood covers three purpose-built categories — Structural, Concrete Forming, and General Ordinary Use. All products carry F★★★★ rating, the highest Japanese formaldehyde emission standard.</p>
+
+      <div class="sub-grid" style="margin-top:0">
+        <div class="sub-card">
+          <div class="sc-eye">SP · Structural</div>
+          <h4>Structural Plywood</h4>
+          <p>Designed for load-bearing applications in Japanese construction. Meets the most demanding structural performance requirements.</p>
+          <div class="sub-spec">
+            <span>Standard: TS C-2 F★★★★</span>
+            <span>Grades: B-C · C-D</span>
+          </div>
+        </div>
+        <div class="sub-card">
+          <div class="sc-eye">CP · Concrete Forming</div>
+          <h4>Concrete Form Plywood</h4>
+          <p>Built for repetitive use in concrete formwork. Available in Regular and F★★★ variants, with bending options.</p>
+          <div class="sub-spec">
+            <span>Standard: CP Regular / CP F★★★</span>
+            <span>Grades: B-C · C-D</span>
+          </div>
+        </div>
+        <div class="sub-card">
+          <div class="sc-eye">OP · General Use</div>
+          <h4>Ordinary Plywood</h4>
+          <p>General interior and light-duty applications. T1 and T2 moisture resistance ratings available to spec.</p>
+          <div class="sub-spec">
+            <span>Standard: T1 / T2 F★★★★</span>
+            <span>Grades: G1 · G2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-badges" style="margin-top:clamp(24px,3vw,36px)">
+        <span class="badge">JAS Law Certified</span>
+        <span class="badge">F★★★★ Rated</span>
+        <span class="badge green">FSC® Available</span>
+        <span class="badge green">PEFC® Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Marine Plywood -->
+<section id="marine" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">05 / Product</div>
+    <h2>Marine Plywood</h2>
+    <div class="r">BS 1088 · Q-Mark Certified</div>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-media">
+      <img class="main-img" src="assets/marine-plywood.png" alt="Marine grade plywood surface" style="width:500px;height:500px;max-width:100%;object-fit:cover;border-radius:2px"/>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:clamp(20px,2.5vw,32px)">Holding BS 1088 — the internationally recognised benchmark for marine-grade plywood — our marine panels feature Grade A veneer on both face and back, bonded with WBP Phenol Formaldehyde adhesive for a fully waterproof, permanent bond. Q-Mark certification provides independent third-party verification of every batch.</p>
+
+      <div class="spec-table">
+        <div class="spec-row">
+          <span class="spec-key">Face &amp; Back Veneer</span>
+          <span class="spec-val">Grade A — both sides, minimal defects</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Adhesive</span>
+          <span class="spec-val">WBP Phenol Formaldehyde — boil-proof bond</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Primary Standard</span>
+          <span class="spec-val">BS 1088 — International marine standard</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">CE Marking</span>
+          <span class="spec-val">EN 13986 — Construction products directive</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Quality Assurance</span>
+          <span class="spec-val">Q-Mark — independent batch certification</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Sustainability</span>
+          <span class="spec-val">FSC® and PEFC® certified available</span>
+        </div>
+      </div>
+
+      <div class="feat-list">
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>BS 1088 certified</strong> — the gold standard for marine plywood, specified by shipbuilders, boat yards and architects worldwide.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Grade A face &amp; back</strong> — premium veneer selection both sides with minimal knots, patches or defects.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>WBP boil-proof bond</strong> — phenol formaldehyde adhesive that withstands prolonged water immersion and extreme conditions.</p></div>
+        <div class="feat-item"><div class="feat-dot"></div><p><strong>Q-Mark independently verified</strong> — every batch certified by a third-party body, not just self-declared.</p></div>
+      </div>
+
+      <div class="cert-badges">
+        <span class="badge">BS 1088</span>
+        <span class="badge">Q-Mark</span>
+        <span class="badge">CE · EN 13986</span>
+        <span class="badge">CARB Phase 2</span>
+        <span class="badge">EPA TSCA Title VI</span>
+        <span class="badge green">FSC® Available</span>
+        <span class="badge green">PEFC® Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Certifications -->
+<section id="certifications">
+  <div class="sh">
+    <div class="num">06 / Certifications</div>
+    <h2>Certified to the highest global standards.</h2>
+    <div class="r">6 certifications · Independently verified</div>
+  </div>
+  <p class="lede" style="max-width:72ch;margin-bottom:clamp(40px,5vw,64px)">Every panel we ship is backed by internationally recognised certification bodies. From sustainable forest sourcing to formaldehyde emission control and marine-grade quality assurance — our credentials are independently verified, not self-declared.</p>
+  <div class="cert-docs" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-bottom:clamp(40px,5vw,64px)">
+
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:2px;padding:clamp(20px,2.5vw,32px)">
+      <img src="assets/prod-stack-1.png" alt="CE Marking Certificate" style="width:100%;max-width:180px;margin:0 auto 20px;display:block;filter:none"/>
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">EU · Construction</div>
+      <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:8px">CE Marking</h4>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.6">EN 13986 compliant — mandatory for construction plywood sold in the European Union. Certificate: 2812-CPR-0053.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:2px;padding:clamp(20px,2.5vw,32px)">
+      <img src="assets/prod-stack-4.png" alt="UKCA Certificate" style="width:100%;max-width:180px;margin:0 auto 20px;display:block;filter:none"/>
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">UK · Construction</div>
+      <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:8px">UKCA Marking</h4>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.6">UK Conformity Assessed — equivalent to CE for the British market post-Brexit. Certificate: 1224-CPR-0053.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:2px;padding:clamp(20px,2.5vw,32px)">
+      <img src="assets/prod-stack-2.png" alt="EPA CARB Certificate" style="width:100%;max-width:180px;margin:0 auto 20px;display:block;filter:none"/>
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">USA · Emission</div>
+      <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:8px">EPA / CARB Phase 2</h4>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.6">EPA TSCA Title VI and CARB Phase 2 compliant — the world's strictest formaldehyde emission standard for the US market.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:2px;padding:clamp(20px,2.5vw,32px)">
+      <img src="assets/prod-stack-3.png" alt="Q-Mark BM TRADA Certificate" style="width:100%;max-width:180px;margin:0 auto 20px;display:block;filter:none"/>
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Marine · Quality</div>
+      <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:8px">Q-Mark · BM TRADA</h4>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Independent third-party verification for marine plywood (BS 1088). Certificate: Marine 001 — every batch tested.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:2px;padding:clamp(20px,2.5vw,32px)">
+      <img src="assets/prod-panel-4.png" alt="PEFC Certificate" style="width:100%;max-width:180px;margin:0 auto 20px;display:block;filter:none"/>
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Forest · Chain of Custody</div>
+      <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:8px">PEFC® Certified</h4>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Programme for Endorsement of Forest Certification — SIRIM-COC-0014. Traceable, responsibly sourced timber from certified forests.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:2px;padding:clamp(20px,2.5vw,32px);display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <img src="assets/fsc-certificate.png" alt="FSC Certificate" style="width:100%;max-width:180px;margin:0 auto 20px;display:block;filter:none"/>
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Forest · Chain of Custody</div>
+        <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:8px">FSC® Certified</h4>
+        <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Forest Stewardship Council certified chain-of-custody. The globally recognised mark of responsible forest management, available on all product lines.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Applications -->
+<section id="applications" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">07 / Applications</div>
+    <h2>Where our panels are specified.</h2>
+    <div class="r">10 end-use categories</div>
+  </div>
+  <div class="app-grid">
+    <div class="app-item"><div class="app-icon">🏗️</div><p>Construction</p></div>
+    <div class="app-item"><div class="app-icon">🪵</div><p>Flooring</p></div>
+    <div class="app-item"><div class="app-icon">🪑</div><p>Furniture</p></div>
+    <div class="app-item"><div class="app-icon">🗄️</div><p>Cabinetry</p></div>
+    <div class="app-item"><div class="app-icon">🧱</div><p>Formwork</p></div>
+    <div class="app-item"><div class="app-icon">⛵</div><p>Marine</p></div>
+    <div class="app-item"><div class="app-icon">🚪</div><p>Wall Panels</p></div>
+    <div class="app-item"><div class="app-icon">📦</div><p>Packaging</p></div>
+    <div class="app-item"><div class="app-icon">🛋️</div><p>Interior Fit-out</p></div>
+    <div class="app-item"><div class="app-icon">🪟</div><p>Laminated Boards</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="eye" style="color:rgba(243,234,217,.7);margin-bottom:20px">Request a Quote</div>
+  <h2>Ready to specify?</h2>
+  <p class="cta-body">Tell us your grade, adhesive type, sheet size and volume — we'll respond with pricing and lead times within 24 hours.</p>
+  <div class="btn-row">
+    <a href="index.html#contact" class="btn primary">Get a Quote</a>
+    <a href="about.html" class="btn ghost">Learn About Us</a>
+  </div>
+</section>
+
+<!-- Curve to footer -->
+<div class="curve-footer" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 Q720,-40 1440,60 L1440,120 L0,120 Z" fill="var(--ink)"/></svg>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="fcols">
+    <div>
+      <img src="assets/logo-white.svg" alt="AsiaGreenWood · 东园森界" style="width:260px;max-width:100%;height:auto;display:block;margin-bottom:20px"/>
+      <p style="max-width:36ch;font-size:13px;line-height:1.65;color:rgba(243,234,217,.55)">Responsibly managed plywood and veneer, milled in Kedah, Malaysia since 1964.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html#process">Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Products</h5>
+      <ul>
+        <li><a href="#hardwood">Hardwood Plywood</a></li>
+        <li><a href="#birch">Birch Face Plywood</a></li>
+        <li><a href="#jas">JAS Certified</a></li>
+        <li><a href="#marine">Marine Plywood</a></li>
+        <li><a href="#biochar">Biochar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach</h5>
+      <ul>
+        <li>+604 · 419 7111</li>
+        <li>lktan.agg@gmail.com</li>
+        <li>Sungai Petani, Kedah · MY</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Asia Green Wood Sdn Bhd · 5653-H · All rights reserved</span>
+    <span>Privacy · Terms · Cookies</span>
+  </div>
+</footer>
+
+<script>
+  const navEl = document.getElementById('nav');
+  const navLogo = document.getElementById('navLogo');
+  function onScroll(){
+    if(window.scrollY > 60){
+      navEl.classList.add('scrolled');
+      if(navLogo) navLogo.src = 'assets/logo.svg';
+    } else {
+      navEl.classList.remove('scrolled');
+      if(navLogo) navLogo.src = 'assets/logo-white.svg';
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const om = document.getElementById('overlayMenu');
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  function openMenu(){ om.classList.add('open'); om.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ om.classList.remove('open'); om.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  openBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  om.querySelectorAll('.omlinks a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if(e.key==='Escape' && om.classList.contains('open')) closeMenu(); });
+</script>
+</body>
+</html>

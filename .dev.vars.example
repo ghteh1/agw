@@ -1,0 +1,6 @@
+# Copy this file to .dev.vars for local Cloudflare Pages development.
+# Never commit the real .dev.vars file or paste these values into client-side HTML.
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
+CONTACT_TO_EMAIL=lktan.agg@gmail.com
+# This must use a sender address on a domain verified in Resend.
+CONTACT_FROM_EMAIL=Asia Green Wood Website <enquiries@asiagreenwood.com>

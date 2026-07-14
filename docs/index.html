@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="assets/logomark.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AsiaGreenWood · 东园森界 — Responsibly sourced plywood from Malaysia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+</style>
+
+<script>
+  const TWEAKS = /*EDITMODE-BEGIN*/{
+    "palette": "bark",
+    "heroStyle": "overlay",
+    "showGrain": true,
+    "showChinese": true,
+    "density": "comfortable"
+  }/*EDITMODE-END*/;
+</script>
+
+<style>
+  :root{
+    --bark:       #4A2E18;
+    --bark-2:     #6B4423;
+    --bark-3:     #8A6A4A;
+    --cream:      #F3EAD9;
+    --cream-2:    #E8DBC3;
+    --paper:      #FBF6EC;
+    --ink:        #1F1915;
+    --ink-2:      #463A30;
+    --moss:       #3E5A3C;
+    --moss-2:     #6B8260;
+    --rust:       #B4542A;
+    --rule:       rgba(31,25,21,.14);
+
+    --ff-display: "Libre Caslon Display", ui-serif, Georgia, serif;
+    --ff-body:    "Brandon Grotesque", system-ui, sans-serif;
+    --ff-mono:    "JetBrains Mono", ui-monospace, monospace;
+    --ff-cn:      "Noto Serif SC", serif;
+
+    --pad-x: clamp(24px, 5vw, 96px);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--ff-body);-webkit-font-smoothing:antialiased}
+  body{font-size:16px;line-height:1.55;letter-spacing:.005em;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* palette variants */
+  body[data-palette="bark"]{--primary:var(--bark);--primary-2:var(--bark-2);--accent:var(--moss);--surface:var(--paper);--surface-2:var(--cream);}
+  body[data-palette="moss"]{--primary:var(--moss);--primary-2:#2F4F3A;--accent:var(--bark-2);--surface:var(--paper);--surface-2:#E8EBDC;}
+  body[data-palette="ink"]{--primary:#14110E;--primary-2:#2B241E;--accent:var(--rust);--surface:#F7F2E6;--surface-2:#ECE4D2;}
+
+  body[data-density="compact"]{--pad-x: clamp(20px, 4vw, 72px)}
+  body[data-density="compact"] section{padding-block: clamp(48px, 7vw, 96px) !important}
+
+  /* --- Utility --- */
+  .eye{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-2);font-weight:500}
+  .rule{height:1px;background:var(--rule);border:0}
+  .cn{font-family:var(--ff-cn);letter-spacing:.08em}
+  body[data-show-cn="false"] .cn{display:none}
+
+  h1,h2,h3,h4{font-family:var(--ff-display);font-weight:400;letter-spacing:-.01em;margin:0;line-height:1.04}
+  h1{font-size:clamp(44px, 7vw, 112px)}
+  h2{font-size:clamp(32px, 4.4vw, 68px);line-height:1.06}
+  h3{font-size:clamp(22px, 1.8vw, 28px);line-height:1.18}
+  .lede{font-size:clamp(17px, 1.15vw, 19px);color:var(--ink-2);max-width:62ch;line-height:1.6}
+  p{color:var(--ink-2)}
+
+  /* grain overlay (tweakable) */
+  body[data-grain="true"]::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.06;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* --- Top announcement --- */
+  .announce{background:var(--primary);color:var(--cream);font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:10px var(--pad-x);display:flex;justify-content:space-between;gap:24px;align-items:center}
+  .announce .dot{width:6px;height:6px;border-radius:50%;background:var(--cream);display:inline-block;margin-right:8px;animation:blip 2.6s infinite}
+  @keyframes blip{0%,100%{opacity:.4}50%{opacity:1}}
+  .announce .marq{overflow:hidden;white-space:nowrap;flex:1}
+  .announce .marq span{display:inline-block;padding-right:40px}
+
+  /* --- Nav (overlay) --- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;border-bottom:1px solid transparent;transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease}
+  header.nav.scrolled{background:color-mix(in oklab, var(--surface) 92%, transparent);backdrop-filter:blur(14px);border-bottom-color:var(--rule)}
+  .nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:20px var(--pad-x)}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-mark{display:flex;align-items:center}
+  
+  .brand-mark img{height:72px;width:auto;object-fit:contain;filter:none;transition:opacity .3s}
+  
+  .brand-text{display:none}
+  header.nav.scrolled .brand-text{color:var(--ink)}
+  .brand-text .n1{font-family:var(--ff-display);font-size:20px;letter-spacing:.02em}
+  .brand-text .n2{font-family:var(--ff-cn);font-size:11px;letter-spacing:.22em;margin-top:4px;opacity:.78}
+  header.nav.scrolled .brand-text .n2{color:var(--ink-2);opacity:1}
+
+  /* menu trigger */
+  .menu-trigger{display:flex;align-items:center;gap:14px;background:transparent;border:0;cursor:pointer;color:var(--cream);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:8px 4px;transition:color .3s}
+  header.nav.scrolled .menu-trigger{color:var(--ink)}
+  .menu-trigger .ham{display:inline-flex;flex-direction:column;gap:5px;width:26px}
+  .menu-trigger .ham i{display:block;height:1.5px;background:currentColor;transition:transform .3s, opacity .3s;transform-origin:center}
+  .menu-trigger .ham i:nth-child(1){width:100%}
+  .menu-trigger .ham i:nth-child(2){width:70%;align-self:flex-end}
+
+  /* middle slot - wordmark/tagline on desktop */
+  .nav-tag{justify-self:start;margin-left:16px;padding-left:20px;border-left:1px solid rgba(243,234,217,.35);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.85);transition:color .3s, border-color .3s}
+  header.nav.scrolled .nav-tag{color:var(--ink-2);border-left-color:var(--rule)}
+  .nav-tag .caret{display:inline-block;margin-left:8px;transform:translateY(-1px)}
+
+  /* overlay menu */
+  .overlay-menu{position:fixed;inset:0;z-index:200;background:var(--ink);color:var(--cream);display:grid;grid-template-rows:auto 1fr auto;opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.2,.7,.2,1)}
+  .overlay-menu.open{opacity:1;pointer-events:auto}
+  .overlay-menu .omhead{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-bottom:1px solid rgba(243,234,217,.12)}
+  .overlay-menu .omhead .mk{width:40px;height:40px;border-radius:50%;background:var(--cream);display:grid;place-items:center}
+  .overlay-menu .omhead .mk img{width:76%;height:76%;object-fit:contain}
+  .overlay-menu .close{background:transparent;border:0;color:var(--cream);cursor:pointer;display:flex;align-items:center;gap:14px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .overlay-menu .close .xi{position:relative;width:22px;height:22px}
+  .overlay-menu .close .xi::before,.overlay-menu .close .xi::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:currentColor}
+  .overlay-menu .close .xi::before{transform:rotate(45deg)}
+  .overlay-menu .close .xi::after{transform:rotate(-45deg)}
+  .overlay-menu .ombody{display:grid;grid-template-columns:1.4fr 1fr;padding:clamp(40px,6vw,96px) var(--pad-x);gap:80px;align-items:center}
+  .overlay-menu .omlinks{list-style:none;padding:0;margin:0}
+  .overlay-menu .omlinks li{overflow:hidden;border-bottom:1px solid rgba(243,234,217,.08)}
+  .overlay-menu .omlinks a{display:flex;align-items:baseline;gap:24px;padding:20px 0;font-family:var(--ff-display);font-size:clamp(36px,5vw,72px);line-height:1;color:var(--cream);transition:transform .3s, color .3s;transform:translateY(20px);opacity:0}
+  .overlay-menu.open .omlinks a{transform:translateY(0);opacity:1;transition-delay:calc(var(--i,0) * 60ms + 150ms);transition-duration:.5s}
+  .overlay-menu .omlinks a:hover{color:var(--bark-3);transform:translateX(12px) translateY(0)}
+  .overlay-menu .omlinks a .idx{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;color:rgba(243,234,217,.4);align-self:flex-start;padding-top:12px}
+  .overlay-menu .omaside{border-left:1px solid rgba(243,234,217,.12);padding-left:60px;max-width:420px}
+  .overlay-menu .omaside .eyem{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.5);margin-bottom:20px}
+  .overlay-menu .omaside h4{font-family:var(--ff-display);font-size:26px;color:var(--cream);margin:0 0 14px;line-height:1.2}
+  .overlay-menu .omaside p{color:rgba(243,234,217,.7);font-size:14px;line-height:1.65}
+  .overlay-menu .omaside .cn{display:block;font-family:var(--ff-cn);font-size:13px;letter-spacing:.14em;margin-top:20px;color:rgba(243,234,217,.55)}
+  .overlay-menu .omfoot{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-top:1px solid rgba(243,234,217,.12);font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55)}
+  .overlay-menu .omfoot a{color:rgba(243,234,217,.8)}
+  @media (max-width:860px){
+    .nav-tag{display:none}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad-x)}
+    .brand-mark img{height:60px}
+    .menu-trigger>span:first-child{display:none}
+    .overlay-menu .ombody{grid-template-columns:1fr;gap:40px}
+    .overlay-menu .omaside{border-left:0;padding-left:0;border-top:1px solid rgba(243,234,217,.12);padding-top:32px}
+  }
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;font-size:16px;font-weight:500;letter-spacing:.02em;transition:all .2s;border:1px solid transparent;cursor:pointer}
+  .btn.primary{background:var(--primary);color:var(--cream)}
+  .btn.primary:hover{background:var(--ink);transform:translateY(-1px)}
+  .btn.ghost{border-color:var(--ink);color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--surface)}
+  .btn .arr{width:16px;height:1px;background:currentColor;position:relative;transition:width .25s}
+  .btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+  .btn:hover .arr{width:22px}
+
+  /* --- Hero (full-bleed overlay) --- */
+  .hero{position:relative;height:100vh;min-height:100vh;display:grid;grid-template-columns:1fr;gap:0;background:#000;overflow:hidden}
+  .hero-media{position:absolute;inset:0;z-index:0}
+  .hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02)}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,10,6,.55) 0%, rgba(15,10,6,.15) 35%, rgba(15,10,6,.55) 100%);pointer-events:none}
+  .hero-copy{position:relative;z-index:2;padding:clamp(88px,11vh,154px) var(--pad-x) clamp(100px,12vw,150px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;color:var(--cream);min-height:100vh;gap:0}
+  .hero-copy .top{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:clamp(16px,2.5vh,40px);flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid rgba(243,234,217,.4);border-radius:999px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);backdrop-filter:blur(6px)}
+  .chip .sq{width:6px;height:6px;background:var(--moss-2);border-radius:1px}
+  .hero h1{color:var(--cream);max-width:18ch;text-align:center;text-wrap:balance}
+  .hero h1 span.ital{font-style:italic;color:var(--cream)}
+  .hero-copy .sig{margin:clamp(16px,2.5vh,36px) auto 0;max-width:58ch;color:rgba(243,234,217,.88);font-size:clamp(15px,1.1vw,18px);line-height:1.75}
+
+  /* centered hero logo (masthead) — prominent, ~30% of viewport width */
+  .hero-logo{width:min(672px,36vw);min-width:360px;height:auto;margin:0 auto clamp(10px,1.6vh,18px);display:block}
+  .hero-formerly{font-family:var(--ff-mono);font-size:clamp(9px,0.9vw,11px);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.62);text-align:center;margin-bottom:clamp(20px,3vh,40px)}
+  .hero-slogan{margin:clamp(20px,3vh,36px) auto 0;color:rgba(243,234,217,.9);font-family:var(--ff-body);font-size:clamp(16px,1.4vw,21px);font-weight:300;letter-spacing:.01em;line-height:1.6}
+  .hero-slogan em{font-style:italic;color:var(--cream)}
+  @media(max-width:900px){.hero-logo{width:70vw;min-width:0;margin-inline:auto}}
+
+  /* Learn more circular button */
+  .learn-more{margin-top:clamp(40px,5vw,64px);width:clamp(110px,10vw,140px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(243,234,217,.55);background:transparent;color:var(--cream);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;display:inline-grid;place-items:center;position:relative;transition:background .3s, border-color .3s, transform .3s;text-decoration:none}
+  .learn-more:hover{background:rgba(243,234,217,.12);border-color:var(--cream);transform:scale(1.04)}
+  .learn-more::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1px solid rgba(243,234,217,.15)}
+
+  /* Vertical divider line decoration */
+  .hero-vline{position:absolute;left:50%;top:40%;width:1px;height:12vh;background:linear-gradient(180deg, transparent, rgba(243,234,217,.6), transparent);z-index:1;transform:translateX(-50%)}
+
+  /* hero meta pinned to bottom */
+  .hero-meta{position:absolute;left:var(--pad-x);right:var(--pad-x);bottom:clamp(80px,15vh,140px);display:grid;grid-template-columns:repeat(4,1fr);gap:0;z-index:2;border-top:1px solid rgba(243,234,217,.25)}
+  .hero-meta .m{padding:28px 20px 0 20px;border-right:1px solid rgba(243,234,217,.25)}
+  .hero-meta .m:first-child{padding-left:0}
+  .hero-meta .m:last-child{border-right:0;padding-right:0}
+  .hero-meta .k{font-family:var(--ff-display);font-size:clamp(22px,2vw,32px);color:var(--cream);line-height:1}
+  .hero-meta .v{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,234,217,.7);margin-top:12px}
+  @media (max-width:720px){
+    .hero-meta{position:static;margin-top:56px}
+    .hero-meta .m{padding:14px 10px 0 0}
+    .fbot{flex-direction:column;gap:8px;text-align:center}
+    .hero-meta .m{padding:12px 8px 0 0}
+  }
+
+  /* Hero bottom curve — the whole hero section is masked with a downward bulge */
+  .hero{
+    clip-path: url(#hero-curve);
+    -webkit-clip-path: url(#hero-curve);
+    padding-bottom: 100px;
+  }
+  /* heritage strip sits cleanly between About and Products now */
+  .heritage{position:relative;z-index:1}
+  .hero-tag{position:absolute;top:50%;right:28px;color:var(--cream);font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;writing-mode:vertical-rl;rotate:180deg;opacity:.7;z-index:3;transform:translateY(-50%)}
+
+  /* rings ornament */
+  .rings{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:720px;height:720px;border-radius:50%;pointer-events:none;z-index:1;opacity:.08}
+  .rings svg{width:100%;height:100%}
+
+  /* hero alt variant: overlay */
+  body[data-hero="overlay"] .hero{grid-template-columns:1fr;position:relative;height:100vh;min-height:100vh}
+  body[data-hero="overlay"] .hero-media{position:absolute;inset:0}
+  body[data-hero="overlay"] .hero-media::after{background:linear-gradient(100deg, rgba(15,10,6,.72) 20%, rgba(15,10,6,.2) 70%)}
+  body[data-hero="overlay"] .hero-copy{position:relative;z-index:3;color:var(--cream)}
+  body[data-hero="overlay"] .hero-copy h1, 
+  body[data-hero="overlay"] .hero-copy .sig{color:var(--cream)}
+  body[data-hero="overlay"] .hero-copy .chip{color:var(--cream);border-color:rgba(243,234,217,.35)}
+  body[data-hero="overlay"] .hero-meta{border-color:rgba(243,234,217,.25)}
+  body[data-hero="overlay"] .hero-meta .m{border-color:rgba(243,234,217,.25)}
+  body[data-hero="overlay"] .hero-meta .k{color:var(--cream)}
+  body[data-hero="overlay"] .hero-meta .v{color:rgba(243,234,217,.7)}
+
+  section{padding-block:clamp(72px,9vw,140px);padding-inline:var(--pad-x);position:relative}
+
+  /* --- Curve / wave section dividers (only hero→heritage and contact→footer) --- */
+  .curve{display:block;width:100%;height:clamp(120px, 12vw, 180px);line-height:0;margin:-1px 0;pointer-events:none;position:relative;z-index:50;overflow:hidden}
+  .curve svg{display:block;width:100%;height:100%}
+  .curve.to-primary svg path:last-child{fill:var(--primary)}
+  .curve.to-ink svg path{fill:var(--ink)}
+  /* Footer curve: brown background (matches contact) + dark ink arc overlapping up */
+  .curve.to-ink{z-index:60;margin-top:-1px;margin-bottom:0;position:relative;background:var(--primary)}
+
+  /* --- Heritage strip (ticker of years) --- */
+  .heritage{background:var(--primary);color:var(--cream);padding-block:24px;overflow:hidden}
+  .hticker{display:flex;gap:80px;animation:scroll 48s linear infinite;white-space:nowrap}
+  .hticker .it{display:inline-flex;align-items:baseline;gap:14px;font-family:var(--ff-display);font-size:28px}
+  .hticker .it .y{font-family:var(--ff-mono);font-size:12px;letter-spacing:.18em;opacity:.7;margin-right:6px}
+  .hticker .dotx{width:6px;height:6px;background:var(--cream);opacity:.4;border-radius:50%;align-self:center}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* --- About --- */
+  .about{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(48px,6vw,120px)}
+  .about .media{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:2px;background:#222}
+  .about .media img{width:100%;height:100%;object-fit:cover}
+  .about .media .lab{position:absolute;bottom:0;left:0;right:0;background:rgba(15,10,6,.78);color:var(--cream);padding:16px 20px;display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .about .copy h2{max-width:20ch;margin-bottom:28px}
+  .about .copy .lede{margin-bottom:28px}
+  .about .copy .bullets{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--rule)}
+  .about .copy .bullets div{border-left:1px solid var(--primary);padding-left:16px}
+  .about .copy .bullets h4{font-family:var(--ff-display);font-size:20px;margin-bottom:6px}
+  .about .copy .bullets p{font-size:14.5px;color:var(--ink-2)}
+
+  /* Section heading */
+  .sh{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:40px;margin-bottom:56px;padding-bottom:22px;border-bottom:1px solid var(--rule)}
+  .sh .num{font-family:var(--ff-mono);font-size:12px;letter-spacing:.2em;color:var(--primary)}
+  .sh h2{max-width:18ch}
+  .sh .r{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+
+  /* --- Products slider --- */
+  .products{background:var(--surface-2);overflow:hidden}
+  .pslider-wrap{position:relative;padding-inline:clamp(8px,3vw,56px)}
+  .pgrid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:4px 0 32px;margin:0}
+  .pgrid::-webkit-scrollbar{display:none}
+  /* show exactly 3 cards in view; gap is 20px so subtract 2 gaps across 3 cards */
+  .pcard{position:relative;background:var(--paper);overflow:hidden;border-radius:4px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;display:flex;flex-direction:column}
+  .pcard:hover{transform:translateY(-4px);box-shadow:0 24px 60px -30px rgba(31,25,21,.28)}
+  .pcard .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#9c7a54,#6B4423);position:relative;overflow:hidden;flex:0 0 auto}
+  .pcard .ph svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+  .pcard .b{padding:22px 22px 68px;flex:1;display:flex;flex-direction:column}
+  .pcard .eye{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .pcard h3{margin-bottom:8px;font-size:22px}
+  .pcard p{font-size:14px;color:var(--ink-2);margin:0 0 16px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .pcard .specs{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+  .spec{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;padding:4px 9px;background:var(--surface-2);border:1px solid var(--rule);border-radius:2px;color:var(--ink-2)}
+  .pcard .arrow{position:absolute;right:20px;bottom:22px;width:36px;height:36px;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;transition:all .25s;background:var(--paper)}
+  .pcard:hover .arrow{background:var(--primary);border-color:var(--primary);color:var(--cream)}
+  .pcard .arrow svg{width:12px;height:12px}
+
+  /* Slider controls */
+  .pcontrols{display:flex;justify-content:space-between;align-items:center;margin-top:32px;gap:24px}
+  .pnav{display:flex;gap:12px}
+  .pbtn{width:52px;height:52px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:all .25s}
+  .pbtn:hover{background:var(--primary);border-color:var(--primary);color:var(--cream);transform:translateY(-1px)}
+  .pbtn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+  .pbtn:disabled:hover{background:var(--paper);border-color:var(--rule);color:var(--ink);transform:none}
+  .pbtn svg{width:16px;height:16px}
+  .pprogress{flex:1;max-width:280px;display:flex;align-items:center;gap:14px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+  .pprogress .track{flex:1;height:1px;background:var(--rule);position:relative;overflow:hidden}
+  .pprogress .track .bar{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--primary);transition:width .35s cubic-bezier(.2,.7,.2,1)}
+  .pcard.feat h3{font-size:32px;max-width:16ch}
+  .pcard.feat p{font-size:15px;max-width:50ch}
+
+  /* plywood visuals — CSS only */
+  .ply-stack{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:20px 60px}
+  .ply-stack .layer{height:14px;border-radius:2px;position:relative;overflow:hidden}
+  .ply-stack .layer::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 2px, transparent 2px 14px), linear-gradient(90deg, #7A5330, #A07A48, #7A5330)}
+  .ply-stack .layer:nth-child(2n)::before{background:repeating-linear-gradient(90deg, rgba(0,0,0,.1) 0 2px, transparent 2px 18px), linear-gradient(90deg, #593519, #7A4B25, #593519)}
+  .grain{background:
+    radial-gradient(ellipse 120% 40% at 40% 60%, rgba(255,255,255,.1), transparent 70%),
+    repeating-linear-gradient(88deg, rgba(0,0,0,.08) 0 1px, transparent 1px 6px),
+    linear-gradient(90deg, #8A5A2E, #B07A44 40%, #8A5A2E);}
+  .veneer{background:
+    radial-gradient(circle at 30% 40%, rgba(255,220,170,.3), transparent 40%),
+    repeating-radial-gradient(ellipse at 50% 30%, rgba(0,0,0,.08) 0 1px, transparent 1px 8px),
+    linear-gradient(135deg,#C49564,#9A6838)}
+
+  /* --- Process --- */
+  .process{background:var(--surface)}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .step{padding:34px 24px 40px;border-right:1px solid var(--rule);position:relative;transition:background .3s}
+  .step:last-child{border-right:0}
+  .step:hover{background:var(--surface-2)}
+  .step .n{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--primary)}
+  .step h3{font-size:22px;margin:14px 0 12px;max-width:12ch}
+  .step p{font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0}
+  .step .ic{width:34px;height:34px;margin-top:18px;color:var(--primary)}
+
+  /* --- Environment --- */
+  .env{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,5vw,100px);align-items:center}
+  .env .media{position:relative;aspect-ratio:5/6;overflow:hidden}
+  .env .media img{width:100%;height:100%;object-fit:cover}
+  .env .media .small{position:absolute;bottom:-60px;right:-40px;width:48%;aspect-ratio:1;overflow:hidden;border:8px solid var(--surface);background:#222}
+  .env .media .small img{width:100%;height:100%;object-fit:cover}
+  .env .copy h2{margin-bottom:24px;max-width:16ch}
+  .env .pledge{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .env .pledge div{padding:20px;background:var(--surface-2);border-left:2px solid var(--primary)}
+  .env .pledge .k{font-family:var(--ff-display);font-size:40px;color:var(--primary);line-height:1}
+  .env .pledge .v{font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);margin-top:8px}
+
+  /* --- Facility strip --- */
+  .facility{background:var(--ink);color:var(--cream);padding:0 !important}
+  .fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;min-height:480px}
+  .fgrid > *{position:relative;overflow:hidden}
+  .fgrid img{width:100%;height:100%;object-fit:cover;filter:brightness(.78) saturate(.85)}
+  .fgrid .copy{padding:clamp(32px,4vw,64px);display:flex;flex-direction:column;justify-content:space-between;background:var(--ink)}
+  .fgrid .copy .eye{color:rgba(243,234,217,.6)}
+  .fgrid .copy h2{color:var(--cream);margin:16px 0 20px}
+  .fgrid .copy p{color:rgba(243,234,217,.75);max-width:42ch}
+  .fgrid .copy ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px;font-family:var(--ff-mono);font-size:11.5px;letter-spacing:.1em}
+  .fgrid .copy ul li{display:flex;gap:12px;align-items:center;color:rgba(243,234,217,.85)}
+  .fgrid .copy ul li::before{content:"";width:8px;height:8px;background:var(--cream);opacity:.5;border-radius:50%}
+  .fgrid .cap{position:absolute;left:18px;bottom:14px;color:var(--cream);font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+
+  /* --- Heritage editorial --- */
+  .heritage2{background:var(--surface-2);display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,120px);align-items:center}
+  .heritage2 .copy .quote{font-family:var(--ff-display);font-size:clamp(28px,3.2vw,48px);line-height:1.15;letter-spacing:-.01em;color:var(--primary);max-width:20ch;margin:24px 0 32px}
+  .heritage2 .copy .quote::before{content:"“";display:inline-block;margin-right:6px;transform:translateY(6px)}
+  .heritage2 .copy .sign{display:flex;gap:18px;align-items:center;padding-top:28px;border-top:1px solid var(--rule)}
+  .heritage2 .copy .sign .who{display:flex;flex-direction:column}
+  .heritage2 .copy .sign .who b{font-family:var(--ff-display);font-size:20px;font-weight:400}
+  .heritage2 .copy .sign .who span{font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-top:4px}
+  .heritage2 .media{aspect-ratio:4/5;overflow:hidden;position:relative}
+  .heritage2 .media img{width:100%;height:100%;object-fit:cover}
+  .heritage2 .media .chip-img{position:absolute;bottom:20px;left:20px;background:rgba(15,10,6,.72);color:var(--cream);padding:10px 14px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* --- Contact --- */
+  .contact{background:var(--primary);color:var(--cream);padding-bottom:clamp(60px,7vw,100px)}
+  .contact-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(40px,5vw,100px);align-items:end}
+  .contact h2{color:var(--cream);max-width:16ch;font-size:clamp(40px,5.5vw,84px)}
+  .contact .eye{color:rgba(243,234,217,.7)}
+  .contact .rail{display:grid;gap:22px}
+  .contact .rail .row{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:18px 0;border-top:1px solid rgba(243,234,217,.2)}
+  .contact .rail .row .lbl{font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,234,217,.6);padding-top:3px}
+  .contact .rail .row .val{color:var(--cream);font-size:15.5px;line-height:1.55}
+  .contact form{margin-top:40px;display:grid;gap:14px}
+  .contact .field{display:grid;gap:6px}
+  .contact .field label{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,234,217,.7)}
+  .contact .field input, .contact .field textarea, .contact .field select{background:transparent;border:0;border-bottom:1px solid rgba(243,234,217,.28);color:var(--cream);padding:10px 0;font-family:var(--ff-body);font-size:15px;outline:none;resize:none}
+  .contact .field input:focus, .contact .field textarea:focus, .contact .field select:focus{border-color:var(--cream)}
+  .contact .field input::placeholder, .contact .field textarea::placeholder{color:rgba(243,234,217,.35)}
+  .contact .row2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .contact button[type=submit]{margin-top:14px;background:var(--cream);color:var(--primary);border:0;padding:16px 22px;border-radius:999px;font-size:14px;font-weight:500;letter-spacing:.02em;cursor:pointer;display:inline-flex;align-items:center;gap:12px;width:fit-content;transition:transform .2s}
+  .contact button[type=submit]:hover{transform:translateY(-1px)}
+  .contact .thanks{padding:24px;background:rgba(243,234,217,.08);border-left:2px solid var(--cream);font-size:14.5px;margin-top:14px;display:none}
+  .contact .thanks.on{display:block}
+
+  /* --- Footer --- */
+  footer{background:var(--ink);color:rgba(243,234,217,.65);padding:48px var(--pad-x) 28px;font-size:13px}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(243,234,217,.15)}
+  .fcols h5{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55);margin:0 0 16px}
+  .fcols ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .fcols a:hover{color:var(--cream)}
+  .fbot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;color:rgba(243,234,217,.45)}
+  .fbrand{display:flex;gap:14px;align-items:center;color:var(--cream)}
+  .fbrand .m{width:40px;height:40px;border-radius:50%;background:var(--primary-2);overflow:hidden;display:grid;place-items:center}
+  .fbrand .m img{width:80%;height:80%;object-fit:contain}
+
+  /* --- Tweaks panel --- */
+  .tweaks{position:fixed;right:20px;bottom:20px;z-index:300;background:var(--paper);border:1px solid var(--rule);border-radius:12px;box-shadow:0 30px 80px -40px rgba(0,0,0,.45);padding:16px;width:280px;font-size:12.5px;display:none}
+  .tweaks.on{display:block}
+  .tweaks h5{margin:0 0 10px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
+  .tweaks .row{display:grid;gap:6px;margin-bottom:14px}
+  .tweaks .row label{font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .tweaks .seg{display:flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+  .tweaks .seg button{flex:1;border:0;background:transparent;padding:7px 8px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;cursor:pointer;color:var(--ink-2)}
+  .tweaks .seg button.on{background:var(--primary);color:var(--cream)}
+  .tweaks .swatches{display:flex;gap:8px}
+  .tweaks .swatches button{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer}
+  .tweaks .swatches button.on{border-color:var(--ink)}
+  .tweaks .title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .tweaks .title b{font-family:var(--ff-display);font-size:16px;font-weight:400}
+  .tweaks .x{border:0;background:transparent;cursor:pointer;color:var(--ink-2)}
+
+  /* Mobile */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;height:100svh;min-height:100svh}
+    .hero-media{aspect-ratio:unset;position:absolute;inset:0}
+    .hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-copy{justify-content:center;min-height:100svh;padding-top:0;padding-bottom:20vh}
+    .hero-meta{position:static;margin-top:clamp(32px,6vh,60px)}
+    .about,.env,.heritage2,.contact-inner{grid-template-columns:1fr}
+    .env .media .small{display:none}
+    .pgrid{grid-template-columns:1fr}
+    .sus-detail{grid-template-columns:1fr !important;gap:28px !important}
+    .sus-grid{grid-template-columns:1fr !important}
+    .sus-cell{border-right:0 !important;border-top:1px solid var(--rule);padding:28px 4px 32px !important}
+    .sus-cell:first-child{border-top:0}
+    .pcard{flex:0 0 calc((100% - 20px) / 2)}
+    .pcard.span-6,.pcard.span-4,.pcard.span-8,.pcard.span-3{grid-column:auto}
+    .steps{grid-template-columns:1fr 1fr}
+    .step{border-bottom:1px solid var(--rule)}
+    .fgrid{grid-template-columns:1fr}
+    nav.links{display:none}
+    .fcols{grid-template-columns:1fr 1fr}
+    .hero-meta{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:600px){
+    .pcard{flex:0 0 100%}
+    .steps{grid-template-columns:1fr}
+    .about .copy .bullets{grid-template-columns:1fr}
+    .mv-grid{grid-template-columns:1fr !important}
+    .env .pledge{grid-template-columns:1fr}
+    .fcols{grid-template-columns:1fr}
+    .hero-meta{grid-template-columns:1fr 1fr}
+    .contact .row2{grid-template-columns:1fr}
+    .sh{display:flex;flex-direction:column;gap:6px;align-items:start}
+    .sh .r{display:none}
+  }
+  @media(max-width:480px){
+    .fcols{grid-template-columns:1fr}
+    .hero-meta{grid-template-columns:1fr 1fr}
+    .hero-copy .top{gap:8px}
+    .contact .row2{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body data-palette="bark" data-hero="full-image" data-grain="true" data-show-cn="true" data-density="comfortable">
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+    <rect width="120" height="120" fill="#4A2E18"/>
+    <g transform="translate(60 60)" fill="none" stroke="#F3EAD9" stroke-width="1.4">
+      <circle r="8"/><circle r="16"/><circle r="24"/><circle r="32"/>
+    </g>
+    <text x="60" y="104" text-anchor="middle" fill="#F3EAD9" font-family="Georgia, serif" font-size="10" letter-spacing="2">AGW</text>
+  </svg>
+</template>
+
+<!-- SVG clip-path defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="hero-curve" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 L 1,0 L 1,0.9 C 0.75,1.0 0.25,1.0 0,0.9 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- Announcement (hidden in overlay hero mode) -->
+<div class="announce" style="display:none">
+  <span><span class="dot"></span>Est. 1964 · Sungai Petani, Malaysia</span>
+  <div class="marq"><span>BB-faced Export Grade · PEFC-aligned Sourcing · Container Ready · ISO 9001 · Kiln-Dried · BB-faced Export Grade · PEFC-aligned Sourcing · Container Ready · ISO 9001 · Kiln-Dried ·</span></div>
+  <span>Request a sample →</span>
+</div>
+
+<!-- Nav (overlay) -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark"><img src="assets/logo-white.svg" id="navLogo" alt="AsiaGreenWood"/></span>
+      <span class="brand-text">
+        <span class="n1">AsiaGreenWood</span>
+        <span class="n2 cn">东园森界</span>
+      </span>
+    </a>
+    <span></span>
+    <button class="menu-trigger" id="menuOpen" aria-label="Open menu">
+      <span>Menu</span>
+      <span class="ham"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay menu -->
+<div class="overlay-menu" id="overlayMenu" role="dialog" aria-hidden="true">
+  <div class="omhead">
+    <a href="#" class="brand">
+      <img src="assets/logo-white.svg" alt="Asia Green Wood" style="height:48px;width:auto;display:block"/>
+    </a>
+    <button class="close" id="menuClose" aria-label="Close menu"><span>Close</span><span class="xi"></span></button>
+  </div>
+  <div class="ombody">
+    <ul class="omlinks">
+      <li><a href="index.html" style="--i:0"><span class="idx">01</span> Home</a></li>
+      <li><a href="about.html" style="--i:1"><span class="idx">02</span> About</a></li>
+      <li><a href="environment.html" style="--i:2"><span class="idx">03</span> Environment</a></li>
+      <li><a href="products.html" style="--i:3"><span class="idx">04</span> Products</a></li>
+      <li><a href="#contact" style="--i:4"><span class="idx">05</span> Contact Us</a></li>
+    </ul>
+    <aside class="omaside">
+      <div class="eyem">Get in touch</div>
+      <h4>Sungai Petani,<br>Kedah · Malaysia</h4>
+      <p>Plot 35–38, Kawasan Perusahaan Bakar Arang<br>+604 · 419 7111<br>lktan.agg@gmail.com</p>
+      <span class="cn">东园森界 · Crafted by nature, guided by love</span>
+    </aside>
+  </div>
+  <div class="omfoot">
+    <span>© 2026 Asia Green Wood Sdn Bhd</span>
+    <span><a href="#">EN</a> · <a href="#">中文</a></span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline>
+    <source src="assets/AGW-MYForest.mp4" type="video/mp4">
+  </video>
+  </div>
+  <div class="hero-copy">
+    <img src="assets/logo-white.svg" alt="Asia Green Wood Sdn. Bhd." class="hero-logo"/>
+    <div class="top">
+      <span class="chip"><span class="sq"></span> Malaysia · Since 1964</span>
+      <span class="chip">Plywood · Veneer · Panels</span>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="m"><div class="k">1964</div><div class="v">Founded</div></div>
+    <div class="m"><div class="k">2,091 t</div><div class="v">Solar · CO₂ saved / year</div></div>
+    <div class="m"><div class="k">6,123 t</div><div class="v">Biomass · CO₂ saved / year</div></div>
+    <div class="m"><div class="k">100%</div><div class="v">Legal verified</div></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+  <div class="media">
+    <img src="assets/ceo-leadership.jpeg" alt="Asia Green Wood leadership — the Tan family"/>
+    <div class="lab"><span>Leadership · 传承</span><span>Two generations</span></div>
+  </div>
+  <div class="copy">
+    <div class="eye">01 — About the company</div>
+    <h2 style="margin-top:18px">A family business, <span style="font-style:italic">rooted</span> in six decades of craft.</h2>
+    <p class="lede">
+      Asia Green Wood Sdn. Bhd. — formerly Asia Plywood Company Sdn. Bhd. — was founded in 1964. Under the leadership of Dato' Tan Boon Huat, who took over management in 1995, it grew into a family business built on integrity and trust, expanding its footprint across Europe, Asia and America.
+    </p>
+    <p class="lede">
+      In 2023, newly appointed CEO Tan Loong Khoon (second generation) pivoted the company toward a greener vision, integrating sustainability into our core operations. With decades of manufacturing expertise behind us, we have evolved from a plywood manufacturer into a comprehensive enterprise managing forest concessions and renewable energy — moving toward a more sustainable future, filled with love and nature.
+    </p>
+    <div class="mv-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:36px;padding-top:32px;border-top:1px solid var(--rule)">
+      <div style="border-left:2px solid var(--primary);padding-left:16px">
+        <div class="eye" style="margin-bottom:8px">Vision</div>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:1.6">To lead a new era of timber — where love guides our work, nature is our partner, and sustainability becomes a way of life.</p>
+      </div>
+      <div style="border-left:2px solid var(--primary);padding-left:16px">
+        <div class="eye" style="margin-bottom:8px">Mission</div>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:1.6">To renew the bond between people and nature — through how we work, the care we give, and the love we share.</p>
+      </div>
+    </div>
+    <div style="margin-top:32px">
+      <a href="about.html" class="btn ghost">Read more <span class="arr"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Heritage ticker (moved below About so hero curve is fully visible) -->
+<div class="heritage">
+  <div class="hticker">
+    <div class="it">Expert in export grade</div><span class="dotx"></span>
+    <div class="it">Unrivalled procurement</div><span class="dotx"></span>
+    <div class="it">High-volume, uniform grade</div><span class="dotx"></span>
+    <div class="it">Responsibly managed</div><span class="dotx"></span>
+    <div class="it">Expert in export grade</div><span class="dotx"></span>
+    <div class="it">Unrivalled procurement</div><span class="dotx"></span>
+    <div class="it">High-volume, uniform grade</div><span class="dotx"></span>
+    <div class="it">Responsibly managed</div><span class="dotx"></span>
+  </div>
+</div>
+
+<!-- Sustainability (Home Section 3) -->
+<section id="sustainability">
+  <div class="sh">
+    <div class="num">02 / Sustainability</div>
+    <h2>Sustainability, built into <span style="font-style:italic">every step.</span></h2>
+    <div class="r">From forest to finished panel</div>
+  </div>
+  <div class="sus-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+    <div class="sus-cell" style="padding:34px 28px 40px;border-right:1px solid var(--rule)">
+      <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--primary)">01</div>
+      <h3 style="margin:14px 0 12px">100% sustainable sources</h3>
+      <p style="font-size:13.5px;line-height:1.6;color:var(--ink-2);margin:0">Every log is 100% traceable to a responsibly managed forest, fully aligned with the EU Deforestation Regulation (EUDR).</p>
+    </div>
+    <div class="sus-cell" style="padding:34px 28px 40px;border-right:1px solid var(--rule)">
+      <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--primary)">02</div>
+      <h3 style="margin:14px 0 12px">Renewable energy</h3>
+      <p style="font-size:13.5px;line-height:1.6;color:var(--ink-2);margin:0">Rooftop solar and our syngas boiler &amp; biochar facility supply the majority of our electricity — cutting carbon by up to 90%.</p>
+    </div>
+    <div class="sus-cell" style="padding:34px 28px 40px;border-right:1px solid var(--rule)">
+      <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--primary)">03</div>
+      <h3 style="margin:14px 0 12px">Forest management</h3>
+      <p style="font-size:13.5px;line-height:1.6;color:var(--ink-2);margin:0">Cable-based Logfisher extraction minimises ground disturbance, protecting the forest floor and the wider ecosystem.</p>
+    </div>
+    <div class="sus-cell" style="padding:34px 28px 40px">
+      <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--primary)">04</div>
+      <h3 style="margin:14px 0 12px">Water treatment</h3>
+      <p style="font-size:13.5px;line-height:1.6;color:var(--ink-2);margin:0">Glue-contaminated wastewater is never discharged into public canals — it is treated to extract harmful resins and formaldehyde.</p>
+    </div>
+  </div>
+  <div style="margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start" class="sus-detail">
+    <div>
+      <h3 style="margin-bottom:14px">Sustainability, engineered into our factory</h3>
+      <p style="color:var(--ink-2);line-height:1.7">At Asia Green Wood, sustainability is built into the factory itself. We have fitted as much rooftop solar as the available roof area allows — currently supplying 15–25% of our electricity — and run dust-extraction systems, low-emission E1 adhesives and LED lighting throughout. Glue-contaminated wastewater is never released into public irrigation canals; it is treated to remove harmful resins and formaldehyde, while production residues are separated and recycled rather than sent to landfill.</p>
+    </div>
+    <div style="border-left:2px solid var(--primary);padding-left:clamp(20px,2.5vw,32px)">
+      <h3 style="margin-bottom:14px">Syngas boiler, biochar &amp; a circular economy</h3>
+      <p style="color:var(--ink-2);line-height:1.7">Our advanced syngas boiler and biochar facility converts our own wood waste into clean electricity — supplying 70–75% of our total electricity and savings while reducing carbon by up to 90%. The biochar it produces becomes a high-value co-product for road base, concrete and sustainable agriculture, closing the loop on waste and creating a new revenue stream within a circular, low-carbon economy.</p>
+    </div>
+  </div>
+  <div style="margin-top:36px"><a href="environment.html" class="btn ghost">Explore our environment <span class="arr"></span></a></div>
+</section>
+
+
+<!-- Process -->
+<section id="process" class="process">
+  <div class="sh">
+    <div class="num">03 / Process</div>
+    <h2>From standing tree to finished panel — five stages.</h2>
+    <div class="r">~18 working days · end-to-end</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="n">01</div>
+      <h3>Sourcing</h3>
+      <p>Log selection from legally verified, responsibly managed concessions across peninsular Malaysia and Sabah.</p>
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 4v32M12 14l8 4 8-4M10 22l10 5 10-5M8 30l12 6 12-6"/></svg>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <h3>Peeling &amp; drying</h3>
+      <p>Logs are rotary-peeled into veneer and kiln-dried to 6–10% moisture on Japanese drying lines.</p>
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="13"/><circle cx="20" cy="20" r="7"/><circle cx="20" cy="20" r="2.5" fill="currentColor" stroke="none"/></svg>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <h3>Glue &amp; lay-up</h3>
+      <p>Cross-laminated in odd-number plies with E0 / E1 / WBP adhesive systems, matched to end-use.</p>
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 10h32M4 18h32M4 26h32M4 34h32"/></svg>
+    </div>
+    <div class="step">
+      <div class="n">04</div>
+      <h3>Hot press &amp; cure</h3>
+      <p>Panels are pressed, cured and trimmed. Each is stamped with batch, grade and moisture values.</p>
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 8h28v8H6zM6 24h28v8H6zM14 16v8M20 16v8M26 16v8"/></svg>
+    </div>
+    <div class="step">
+      <div class="n">05</div>
+      <h3>Grade &amp; ship</h3>
+      <p>Seasoned graders sort to BB-face / A-grade. Pallets are strapped, fumigated and containerised.</p>
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12h24v16H4zM28 18h6l4 4v6h-10"/><circle cx="12" cy="30" r="3"/><circle cx="30" cy="30" r="3"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- 04 Asia -->
+<section id="asia" class="env">
+  <div class="media">
+    <img src="assets/cabin.png" alt="Asia — ancient heritage of forests"/>
+    <div class="lab"><span>Asia · 亚洲</span><span>N 5°38′ · E 100°29′</span></div>
+  </div>
+  <div class="copy">
+    <div class="eye">04 — Asia · 亚洲</div>
+    <h2 style="margin-top:18px">Ancient heritage of <span style="font-style:italic">coexisting</span> with the forest.</h2>
+    <p class="lede">
+      Represents Asia's ancient heritage of coexisting harmoniously with forests and wood. Since ancient times, wood has been an integral part of daily life — bringing warmth, shelter, and a deep connection to nature into every home.
+    </p>
+    <p class="lede">
+      By embracing wood, we reconnect with nature and revive a timeless cultural relationship between humanity and the forest, sharing this wisdom with the world.
+    </p>
+  </div>
+</section>
+
+<!-- 05 Green -->
+<div id="green" style="position:relative;background:var(--paper);overflow:hidden">
+  <!-- Layer 1: mountain silhouette divider -->
+  <img src="assets/env-banner.png" aria-hidden="true"
+       style="display:block;width:100%;height:auto;position:relative;z-index:1;pointer-events:none"/>
+  <!-- Layer 2: pine forest on top -->
+  <img src="assets/env-wide.png" aria-hidden="true"
+       style="display:block;width:100%;height:auto;position:relative;z-index:2;margin-top:-10vw;pointer-events:none"/>
+  <!-- Text overlay — centred -->
+  <div style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(72px,9vw,140px) var(--pad-x)">
+    <div class="eye" style="color:rgba(243,234,217,.6)">05 — Green · 绿色</div>
+    <h2 style="color:var(--cream);margin:20px 0 28px;max-width:22ch">Nurturing a world that grows like a <span style="font-style:italic">living garden</span>.</h2>
+    <p style="color:rgba(243,234,217,.85);font-size:clamp(15px,1.05vw,17px);line-height:1.75;max-width:54ch">Symbolizes our commitment to sustainability, green energy, and environmental stewardship. It reflects our vision of nurturing a world that functions like a living garden — where forests thrive, ecosystems are respected, and growth is balanced with responsibility.</p>
+  </div>
+</div>
+
+<!-- 06 Wood -->
+<section id="wood" class="heritage2">
+  <div class="copy">
+    <div class="eye">06 — Wood · 木材</div>
+    <h2 style="margin-top:18px">Promoting wood culture, <span style="font-style:italic">responsibly.</span></h2>
+    <div class="quote">
+      Wood is a natural resource meant to be used, yet it must be treated with respect and responsibility. Through mindful and sustainable use, we honor nature while ensuring forests continue to flourish for future generations.
+    </div>
+    <p style="color:var(--ink-2);font-size:14.5px;line-height:1.7;margin-top:20px">
+      Embodies the promotion of wood culture worldwide — because wood connects us to the living world, and how we use it defines our relationship with the future.
+    </p>
+  </div>
+  <div class="media">
+    <img src="assets/wood-collage-1.png" alt="Planting trees together"/>
+    <div class="chip-img">Wood culture · 木文化</div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="products">
+  <div class="sh">
+    <div class="num">07 / Catalogue</div>
+    <h2>Export-grade panels, cut to your specification.</h2>
+    <div class="r">12 products · 7 species · 3 glue systems</div>
+  </div>
+
+  <div class="pslider-wrap">
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+  <div class="pcontrols">
+    <div class="pprogress">
+      <span id="pidx">01</span>
+      <div class="track"><div class="bar" id="pbar"></div></div>
+      <span id="ptotal">07</span>
+    </div>
+    <div class="pnav">
+      <button class="pbtn" id="pprev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="pbtn" id="pnext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="eye">08 — Talk to us</div>
+      <h2 style="margin-top:20px">Request a sample, a quote, or a factory visit.</h2>
+      <form id="cform">
+        <div class="row2">
+          <div class="field"><label>Full name</label><input required name="name" placeholder="e.g. Hiroshi Tanaka"/></div>
+          <div class="field"><label>Company</label><input name="company" placeholder="Company / distributor"/></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Email</label><input required type="email" name="email" placeholder="you@company.com"/></div>
+          <div class="field"><label>Destination port</label><input name="port" placeholder="e.g. Yokohama, Felixstowe"/></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Interest</label>
+            <select name="interest">
+              <option>Export-grade plywood (BB-face)</option>
+              <option>Concrete formwork panels</option>
+              <option>Decorative veneer</option>
+              <option>Film-faced plywood</option>
+              <option>Biochar (road base / concrete / fertiliser)</option>
+              <option>Custom specification</option>
+            </select>
+          </div>
+          <div class="field"><label>Volume (m³ / month)</label><input name="vol" placeholder="e.g. 500"/></div>
+        </div>
+        <div class="field"><label>Message</label><textarea rows="3" name="msg" placeholder="Tell us about your project, specs, glue type, grade, timeline…"></textarea></div>
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true"/>
+        <button type="submit">Send enquiry <span class="arr"></span></button>
+        <div class="thanks" id="thanks">Thank you — your enquiry is with our team. We typically reply within one working day.</div>
+        <div class="thanks" id="cform-error" style="border-left-color:#c0392b">Something went wrong sending your enquiry. Please email us directly instead.</div>
+      </form>
+    </div>
+    <div class="rail">
+      <div class="row"><div class="lbl">Address</div><div class="val">Plot 35–38 Kawasan Bukit Selambau<br/>P.O. Box 42, 08010 Sungai Petani<br/>Kedah Darul Aman · Malaysia</div></div>
+      <div class="row"><div class="lbl">Plywood</div><div class="val">lktan.agg@gmail.com<br/>+604 · 419 7111</div></div>
+      <div class="row"><div class="lbl">Biochar</div><div class="val">Mr Heng<br/>chengfa@asiagreenwood.com<br/>017 · 409 1552</div></div>
+      <div class="row"><div class="lbl">Hours</div><div class="val">Mon – Sat · 08:30 – 17:30 MYT</div></div>
+      <div class="row"><div class="lbl">Registry</div><div class="val">Asia Green Wood Sdn Bhd · 5653-H</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Curve divider: contact → footer -->
+<div class="curve to-ink" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 Q720,-40 1440,60 L1440,120 L0,120 Z"/></svg>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="fcols">
+    <div>
+      <div class="fbrand">
+        <img src="assets/logo-white.svg" alt="AsiaGreenWood · 东园森界" style="width:260px;max-width:100%;height:auto;display:block"/>
+      </div>
+      <p style="margin-top:20px;max-width:36ch;font-size:13px;line-height:1.65;color:rgba(243,234,217,.55)">
+        Responsibly managed plywood and veneer, milled in Kedah, Malaysia since 1964.
+      </p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#environment">Environment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Trade</h5>
+      <ul>
+        <li><a href="#contact">Request a sample</a></li>
+        <li><a href="#contact">Quote enquiry</a></li>
+        <li><a href="#">Specifications</a></li>
+        <li><a href="#">Certificates</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach</h5>
+      <ul>
+        <li>+604 · 419 7111</li>
+        <li>lktan.agg@gmail.com</li>
+        <li>Sungai Petani, Kedah · MY</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Asia Green Wood Sdn Bhd · 5653-H · All rights reserved</span>
+    <span>Privacy · Terms · Cookies</span>
+  </div>
+</footer>
+
+<!-- Tweaks panel -->
+<aside class="tweaks" id="tweaks">
+  <div class="title"><b>Tweaks</b><button class="x" id="tx">✕</button></div>
+
+  <div class="row">
+    <label>Palette</label>
+    <div class="swatches">
+      <button data-palette="bark" style="background:#6B4423" title="Bark"></button>
+      <button data-palette="moss" style="background:#3E5A3C" title="Moss"></button>
+      <button data-palette="ink" style="background:#14110E" title="Ink"></button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Hero</label>
+    <div class="seg" data-group="hero">
+      <button data-val="full-image">Split</button>
+      <button data-val="overlay">Overlay</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Paper grain</label>
+    <div class="seg" data-group="grain">
+      <button data-val="true">On</button>
+      <button data-val="false">Off</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Chinese chrome</label>
+    <div class="seg" data-group="cn">
+      <button data-val="true">Show</button>
+      <button data-val="false">Hide</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Density</label>
+    <div class="seg" data-group="density">
+      <button data-val="comfortable">Comfort</button>
+      <button data-val="compact">Compact</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+  // -------- Products --------
+  const PRODUCTS = [
+    {
+      eye:"BIOCHAR", code:"AGW-01",
+      title:"Biochar",
+      desc:"Carbon-negative residue from wood waste via pyrolysis — for road base, concrete and sustainable agriculture.",
+      specs:["Carbon negative","Pyrolysis","Road base","Soil & NPK"],
+      img:"assets/biochar.png",
+      href:"products.html#biochar"
+    },
+    {
+      eye:"HARDWOOD", code:"AGW-02",
+      title:"Hardwood Plywood",
+      desc:"Malaysian tropical hardwoods, dual-adhesive options, CE marked for global construction markets.",
+      specs:["BB/CC · BB/BB","E1 / WBP","CE · EN 13986","FSC® / PEFC®"],
+      img:"assets/hardwood-plywood.png",
+      href:"products.html#hardwood"
+    },
+    {
+      eye:"BIRCH FACE", code:"AGW-03",
+      title:"Birch Face Plywood",
+      desc:"Whole-piece white birch face, UV coat prefinishing available, CARB Phase 2 compliant.",
+      specs:["C+ to E grades","UV coat option","CARB Phase 2","Whole-piece face"],
+      img:"assets/birch-plywood.png",
+      href:"products.html#birch"
+    },
+    {
+      eye:"JAS CERTIFIED", code:"AGW-04",
+      title:"JAS Certification Plywood",
+      desc:"Structural, concrete forming and general use — F★★★★ rated to Japan Agricultural Standard.",
+      specs:["F★★★★ rated","SP · CP · OP","JAS Law","FSC® / PEFC®"],
+      img:"assets/jas-plywood.png",
+      href:"products.html#jas"
+    },
+    {
+      eye:"MARINE", code:"AGW-05",
+      title:"Marine Plywood",
+      desc:"BS 1088 certified, Grade A face & back, WBP bonding — the marine industry benchmark.",
+      specs:["BS 1088","Q-Mark","Grade A / A","WBP boil-proof"],
+      img:"assets/marine-plywood.png",
+      href:"products.html#marine"
+    }
+  ];
+
+  const pgrid = document.getElementById("pgrid");
+
+  pgrid.innerHTML = PRODUCTS.map(p => `
+    <article class="pcard" onclick="location.href='${p.href}'" style="cursor:pointer">
+      <div class="ph" style="overflow:hidden">
+        <img src="${p.img}" alt="${p.title}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)"/>
+      </div>
+      <div class="b">
+        <div class="eye"><span>${p.eye}</span><span>${p.code}</span></div>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <div class="specs">${p.specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div>
+      </div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </article>
+  `).join('');
+
+  // Slider controls
+  const pprev = document.getElementById('pprev');
+  const pnext = document.getElementById('pnext');
+  const pidxEl = document.getElementById('pidx');
+  const ptotalEl = document.getElementById('ptotal');
+  const pbar = document.getElementById('pbar');
+  const pad2 = n => String(n).padStart(2,'0');
+  ptotalEl.textContent = pad2(PRODUCTS.length);
+
+  function cardStep(){
+    const first = pgrid.querySelector('.pcard');
+    if(!first) return 320;
+    const second = first.nextElementSibling;
+    if(second) return second.getBoundingClientRect().left - first.getBoundingClientRect().left;
+    return first.getBoundingClientRect().width + 20;
+  }
+  function updatePState(){
+    const step = cardStep();
+    const idx = Math.round(pgrid.scrollLeft / step);
+    const maxScroll = pgrid.scrollWidth - pgrid.clientWidth;
+    pidxEl.textContent = pad2(Math.min(idx+1, PRODUCTS.length));
+    pbar.style.width = maxScroll > 0 ? (Math.min(pgrid.scrollLeft / maxScroll, 1) * 100) + '%' : '100%';
+    pprev.disabled = pgrid.scrollLeft <= 2;
+    pnext.disabled = pgrid.scrollLeft >= maxScroll - 2;
+  }
+  pprev.addEventListener('click', ()=> pgrid.scrollBy({left:-cardStep(), behavior:'smooth'}));
+  pnext.addEventListener('click', ()=> pgrid.scrollBy({left: cardStep(), behavior:'smooth'}));
+  pgrid.addEventListener('scroll', ()=> requestAnimationFrame(updatePState), {passive:true});
+  window.addEventListener('resize', updatePState);
+  updatePState();
+
+  // -------- Form --------
+  const cform = document.getElementById('cform');
+  const thanks = document.getElementById('thanks');
+  const cformError = document.getElementById('cform-error');
+  const contactEndpoint = 'https://agw.guanghong-teh-914.workers.dev/api/contact';
+  cform.addEventListener('submit', async e => {
+    e.preventDefault();
+    const submitBtn = cform.querySelector('button[type=submit]');
+    cformError.classList.remove('on');
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = .5;
+    try {
+      const res = await fetch(contactEndpoint, {
+        method: 'POST',
+        body: new FormData(cform),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Send failed');
+      thanks.classList.add('on');
+      cform.querySelectorAll('input,textarea,select').forEach(el=> el.disabled = true);
+    } catch (err) {
+      cformError.classList.add('on');
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = 1;
+    }
+  });
+
+  // -------- Tweaks --------
+  const body = document.body;
+  const tweaksEl = document.getElementById('tweaks');
+  const applyTweaks = (t) => {
+    body.dataset.palette = t.palette;
+    body.dataset.hero = t.heroStyle;
+    body.dataset.grain = String(t.showGrain);
+    body.dataset.showCn = String(t.showChinese);
+    body.dataset.density = t.density;
+
+    // reflect active state in UI
+    tweaksEl.querySelectorAll('.swatches button').forEach(b=>b.classList.toggle('on', b.dataset.palette===t.palette));
+    tweaksEl.querySelectorAll('.seg').forEach(seg=>{
+      const g = seg.dataset.group;
+      const current = g==='hero'?t.heroStyle : g==='grain'?String(t.showGrain) : g==='cn'?String(t.showChinese) : t.density;
+      seg.querySelectorAll('button').forEach(b=>b.classList.toggle('on', b.dataset.val===current));
+    });
+  };
+  const state = { ...TWEAKS };
+  applyTweaks(state);
+
+  tweaksEl.querySelectorAll('.swatches button').forEach(b=>{
+    b.addEventListener('click', ()=>{ state.palette = b.dataset.palette; persist(); applyTweaks(state); });
+  });
+  tweaksEl.querySelectorAll('.seg').forEach(seg=>{
+    seg.querySelectorAll('button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        const g = seg.dataset.group, v = b.dataset.val;
+        if(g==='hero') state.heroStyle = v;
+        else if(g==='grain') state.showGrain = v==='true';
+        else if(g==='cn') state.showChinese = v==='true';
+        else if(g==='density') state.density = v;
+        persist(); applyTweaks(state);
+      });
+    });
+  });
+  document.getElementById('tx').addEventListener('click', ()=>{
+    tweaksEl.classList.remove('on');
+    window.parent.postMessage({type:'__deactivate_edit_mode'}, '*');
+  });
+
+  function persist(){
+    window.parent.postMessage({type:'__edit_mode_set_keys', edits:{
+      palette: state.palette,
+      heroStyle: state.heroStyle,
+      showGrain: state.showGrain,
+      showChinese: state.showChinese,
+      density: state.density
+    }}, '*');
+  }
+
+  // Edit-mode protocol — REGISTER LISTENER FIRST, then announce
+  window.addEventListener('message', (e) => {
+    const d = e.data;
+    if (!d || typeof d !== 'object') return;
+    if (d.type === '__activate_edit_mode') tweaksEl.classList.add('on');
+    if (d.type === '__deactivate_edit_mode') tweaksEl.classList.remove('on');
+  });
+  window.parent.postMessage({type:'__edit_mode_available'}, '*');
+
+  // --- Nav: scroll style toggle ---
+  const navEl = document.getElementById('nav');
+  const navLogo = document.getElementById('navLogo');
+  const heroEl = document.querySelector('.hero');
+  function onScroll(){
+    const threshold = (heroEl?.offsetHeight || 600) - 120;
+    if(window.scrollY > threshold){ navEl.classList.add('scrolled'); if(navLogo) navLogo.src='assets/logo.svg'; }
+    else{ navEl.classList.remove('scrolled'); if(navLogo) navLogo.src='assets/logo-white.svg'; }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // --- Overlay menu ---
+  const om = document.getElementById('overlayMenu');
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  function openMenu(){ om.classList.add('open'); om.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ om.classList.remove('open'); om.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  openBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  om.querySelectorAll('.omlinks a').forEach(a=>a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && om.classList.contains('open')) closeMenu(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+name = "agw"
+account_id = "914585540fcde8c936b42afa6c2d493d"
+main = "src/worker.js"
+compatibility_date = "2026-07-14"
+workers_dev = true
+
+[assets]
+directory = "./docs"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]

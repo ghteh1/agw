@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="assets/logomark.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — AsiaGreenWood · 东园森界</title>
+<meta name="description" content="Learn about Asia Green Wood's mission, vision, history and leadership. A Malaysian timber enterprise rooted in heritage, guided by love for nature." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+</style>
+<style>
+  :root{
+    --bark:#4A2E18;--bark-2:#6B4423;--bark-3:#8A6A4A;
+    --cream:#F3EAD9;--cream-2:#E8DBC3;--paper:#FBF6EC;
+    --ink:#1F1915;--ink-2:#463A30;
+    --moss:#3E5A3C;--moss-2:#6B8260;
+    --rule:rgba(31,25,21,.14);
+    --primary:var(--bark);--primary-2:var(--bark-2);
+    --surface:var(--paper);--surface-2:var(--cream);
+    --ff-display:"Libre Caslon Display",ui-serif,Georgia,serif;
+    --ff-body:"Brandon Grotesque",system-ui,sans-serif;
+    --ff-mono:"JetBrains Mono",ui-monospace,monospace;
+    --ff-cn:"Noto Serif SC",serif;
+    --pad-x:clamp(24px,5vw,96px);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--ff-body);-webkit-font-smoothing:antialiased}
+  body{font-size:16px;line-height:1.55;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--ff-display);font-weight:400;letter-spacing:-.01em;margin:0;line-height:1.04}
+  h1{font-size:clamp(40px,6vw,96px)}
+  h2{font-size:clamp(28px,4vw,60px);line-height:1.06}
+  h3{font-size:clamp(18px,1.5vw,24px);line-height:1.18}
+  p{color:var(--ink-2);margin:0}
+  .eye{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-2);font-weight:500}
+  .lede{font-size:clamp(16px,1.1vw,18px);color:var(--ink-2);line-height:1.7}
+
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+  /* --- Nav --- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,backdrop-filter .3s}
+  header.nav.scrolled{background:color-mix(in oklab,var(--surface) 92%,transparent);backdrop-filter:blur(14px);border-bottom-color:var(--rule)}
+  .nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:20px var(--pad-x)}
+  .brand{display:flex;align-items:center}
+  .brand-mark img{height:60px;width:auto;object-fit:contain;transition:opacity .3s}
+  .nav-tag{justify-self:start;margin-left:16px;padding-left:20px;border-left:1px solid rgba(243,234,217,.35);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.85);transition:color .3s,border-color .3s}
+  header.nav.scrolled .nav-tag{color:var(--ink-2);border-left-color:var(--rule)}
+  .menu-trigger{display:flex;align-items:center;gap:14px;background:transparent;border:0;cursor:pointer;color:var(--cream);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:8px 4px;transition:color .3s}
+  header.nav.scrolled .menu-trigger{color:var(--ink)}
+  .menu-trigger .ham{display:inline-flex;flex-direction:column;gap:5px;width:26px}
+  .menu-trigger .ham i{display:block;height:1.5px;background:currentColor;transform-origin:center}
+  .menu-trigger .ham i:nth-child(1){width:100%}
+  .menu-trigger .ham i:nth-child(2){width:70%;align-self:flex-end}
+
+  /* --- Overlay menu --- */
+  .overlay-menu{position:fixed;inset:0;z-index:300;background:var(--ink);color:var(--cream);display:grid;grid-template-rows:auto 1fr auto;opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.2,.7,.2,1)}
+  .overlay-menu.open{opacity:1;pointer-events:auto}
+  .overlay-menu .omhead{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-bottom:1px solid rgba(243,234,217,.12)}
+  .mk{width:40px;height:40px;border-radius:50%;background:var(--cream);display:grid;place-items:center;overflow:hidden;flex-shrink:0}
+  .mk img{width:76%;height:76%;object-fit:contain}
+  .overlay-menu .close{background:transparent;border:0;color:var(--cream);cursor:pointer;display:flex;align-items:center;gap:14px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .close .xi{position:relative;width:22px;height:22px}
+  .close .xi::before,.close .xi::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:currentColor}
+  .close .xi::before{transform:rotate(45deg)}
+  .close .xi::after{transform:rotate(-45deg)}
+  .overlay-menu .ombody{display:grid;grid-template-columns:1.4fr 1fr;padding:clamp(40px,6vw,96px) var(--pad-x);gap:80px;align-items:center}
+  .omlinks{list-style:none;padding:0;margin:0}
+  .omlinks li{overflow:hidden;border-bottom:1px solid rgba(243,234,217,.08)}
+  .omlinks a{display:flex;align-items:baseline;gap:24px;padding:18px 0;font-family:var(--ff-display);font-size:clamp(30px,4vw,60px);line-height:1;color:var(--cream);transition:transform .3s,color .3s;transform:translateY(20px);opacity:0}
+  .overlay-menu.open .omlinks a{transform:translateY(0);opacity:1;transition-delay:calc(var(--i,0)*60ms + 150ms);transition-duration:.5s}
+  .omlinks a:hover{color:var(--bark-3);transform:translateX(12px) translateY(0)}
+  .omlinks .idx{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;color:rgba(243,234,217,.4);align-self:flex-start;padding-top:10px}
+  .omaside{border-left:1px solid rgba(243,234,217,.12);padding-left:60px;max-width:420px}
+  .omaside .eyem{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.5);margin-bottom:20px}
+  .omaside h4{font-family:var(--ff-display);font-size:24px;color:var(--cream);margin:0 0 12px;line-height:1.2}
+  .omaside p{color:rgba(243,234,217,.7);font-size:14px;line-height:1.65}
+  .omaside .cn{display:block;font-family:var(--ff-cn);font-size:13px;letter-spacing:.14em;margin-top:18px;color:rgba(243,234,217,.5)}
+  .omfoot{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-top:1px solid rgba(243,234,217,.12);font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55)}
+  .omfoot a{color:rgba(243,234,217,.8)}
+
+  /* --- Hero --- */
+  .hero{position:relative;height:100vh;min-height:100vh;display:flex;align-items:flex-start;overflow:hidden;background:#000;clip-path:url(#hero-curve);-webkit-clip-path:url(#hero-curve);padding-bottom:100px}
+  .hero-media{position:absolute;inset:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,6,3,.82) 0%,rgba(10,6,3,.45) 50%,rgba(10,6,3,.75) 100%)}
+  .hero-media::before{content:"";position:absolute;inset:0;background:rgba(10,6,3,.25);z-index:1}
+  .hero-copy{position:relative;z-index:3;padding:clamp(120px,18vh,200px) var(--pad-x) clamp(60px,8vw,100px);color:var(--cream)}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid rgba(243,234,217,.4);border-radius:999px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);backdrop-filter:blur(6px);margin-bottom:32px}
+  .chip .sq{width:6px;height:6px;background:var(--moss-2);border-radius:1px}
+  .hero-copy h1{color:var(--cream);max-width:20ch;margin-bottom:16px}
+  .hero-sub{font-family:var(--ff-cn);font-size:13px;letter-spacing:.18em;color:rgba(243,234,217,.7)}
+
+  /* --- Sections --- */
+  section{padding-block:clamp(72px,9vw,140px);padding-inline:var(--pad-x);position:relative}
+
+  .sh{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:40px;margin-bottom:clamp(40px,5vw,64px);padding-bottom:22px;border-bottom:1px solid var(--rule)}
+  .sh .num{font-family:var(--ff-mono);font-size:12px;letter-spacing:.2em;color:var(--primary)}
+  .sh h2{max-width:22ch}
+  .sh .r{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+
+
+  /* --- Pillars --- */
+  .pillars-wrap{display:grid;grid-template-columns:28px 1fr;gap:clamp(32px,4vw,64px);margin-top:clamp(64px,8vw,100px)}
+  .pillars-label{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--ff-mono);font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--primary-2);align-self:center;white-space:nowrap}
+  .pillars{display:grid;gap:0}
+  .pillar{display:grid;grid-template-columns:clamp(44px,4vw,60px) 1fr;gap:clamp(20px,2.5vw,40px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid var(--rule);align-items:start}
+  .pillar-icon svg{width:clamp(36px,3.5vw,52px);height:clamp(36px,3.5vw,52px)}
+  .pillar-content h3{font-family:var(--ff-body);font-size:clamp(16px,1.15vw,19px);font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.01em}
+  .pillar-content p{font-family:var(--ff-mono);font-size:clamp(10px,0.8vw,11.5px);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);line-height:1.9}
+
+  /* --- About two-col --- */
+  .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(48px,6vw,120px);align-items:center}
+  .about-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+  .about-media img{width:100%;height:100%;object-fit:cover}
+  .about-media .lab{position:absolute;bottom:0;left:0;right:0;background:rgba(15,10,6,.78);color:var(--cream);padding:14px 18px;display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* Work-culture collage (two images side by side) */
+  .culture-collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .culture-collage .cc-img{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:2px;background:#222}
+  .culture-collage .cc-img img{width:100%;height:100%;object-fit:cover}
+  .culture-collage .cc-img:nth-child(1){margin-top:28px}
+  .culture-collage .cc-img:nth-child(2){margin-bottom:28px}
+  .culture-collage .lab{position:absolute;bottom:0;left:0;right:0;background:rgba(15,10,6,.78);color:var(--cream);padding:12px 14px;display:flex;justify-content:space-between;gap:8px;font-family:var(--ff-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase}
+  @media(max-width:600px){.culture-collage .cc-img:nth-child(1),.culture-collage .cc-img:nth-child(2){margin:0}}
+  .about-bullets{display:grid;grid-template-columns:1fr 1fr;gap:18px 32px;margin-top:36px;padding-top:28px;border-top:1px solid var(--rule)}
+  .about-bullet{border-left:2px solid var(--primary);padding-left:14px}
+  .about-bullet h4{font-family:var(--ff-display);font-size:17px;margin-bottom:6px;color:var(--ink)}
+  .about-bullet p{font-size:13px;color:var(--ink-2);line-height:1.6}
+
+  /* --- Timeline --- */
+  .timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,100px);align-items:start}
+  .timeline-media{position:sticky;top:100px;align-self:start;aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:#eae0cd}
+  .timeline-media .tl-slide{position:absolute;inset:0;opacity:0;transform:translateY(6%) scale(1.05);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .9s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
+  .timeline-media .tl-slide.active{opacity:1;transform:translateY(0) scale(1)}
+  .timeline-media .tl-slide img{width:100%;height:100%;object-fit:cover;display:block}
+  .timeline-media .tl-cap{position:absolute;left:16px;bottom:14px;z-index:2;background:rgba(15,10,6,.72);color:var(--cream);padding:8px 12px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+  .tl-items{display:grid;gap:0}
+  .tl-item{padding:22px 0 22px 28px;border-left:1px solid var(--rule);position:relative}
+  .tl-item::before{content:"";position:absolute;left:-4px;top:26px;width:8px;height:8px;border-radius:50%;background:var(--primary)}
+  .tl-year{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--primary);margin-bottom:6px}
+  .tl-item h3{font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)}
+  .tl-item p{font-size:14px;color:var(--ink-2);line-height:1.65}
+
+  /* --- Team --- */
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+  .team-card{padding:28px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;transition:box-shadow .3s,background .3s}
+  .team-card:hover{box-shadow:0 20px 56px -28px rgba(31,25,21,.22);background:var(--cream)}
+  .tc-init{width:48px;height:48px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;margin-bottom:18px;border:1px solid var(--rule);font-family:var(--ff-display);font-size:18px;color:var(--primary)}
+  .tc-role{font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px}
+  .team-card h3{font-size:clamp(17px,1.3vw,21px);margin-bottom:10px;color:var(--ink)}
+  .team-card p{font-size:13px;color:var(--ink-2);line-height:1.65}
+
+  /* --- Certs --- */
+  .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,24px)}
+  .cert-card{padding:28px 22px;border:1px solid var(--rule);border-radius:2px;transition:background .3s,box-shadow .3s}
+  .cert-card:hover{background:var(--cream);box-shadow:0 12px 40px -20px rgba(31,25,21,.18)}
+  .cert-eye{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:18px}
+  .cert-card h4{font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);color:var(--ink);margin-bottom:10px}
+  .cert-card p{font-size:13px;color:var(--ink-2);line-height:1.6}
+  .cert-num{font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;color:var(--primary);margin-top:18px}
+
+  /* --- CTA --- */
+  .cta-section{background:var(--primary);color:var(--cream);text-align:center;padding-bottom:clamp(60px,8vw,100px)}
+  .cta-section h2{color:var(--cream);margin-bottom:20px}
+  .cta-section .cta-body{color:rgba(243,234,217,.8);max-width:48ch;margin:0 auto 36px;font-size:clamp(15px,1.05vw,17px);line-height:1.7}
+  .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.03em;transition:all .2s;border:1px solid transparent;cursor:pointer;font-family:var(--ff-body)}
+  .btn.primary{background:var(--cream);color:var(--primary)}
+  .btn.primary:hover{background:var(--ink);color:var(--cream);transform:translateY(-1px)}
+  .btn.ghost{border-color:rgba(243,234,217,.5);color:var(--cream)}
+  .btn.ghost:hover{background:rgba(243,234,217,.1);transform:translateY(-1px)}
+
+  /* --- Curve --- */
+  .curve{display:block;width:100%;height:clamp(100px,10vw,160px);line-height:0;margin:-1px 0;pointer-events:none;position:relative;z-index:50;overflow:hidden}
+  .curve svg{display:block;width:100%;height:100%}
+  .curve.to-ink{z-index:60;margin-top:-1px;position:relative;background:var(--primary)}
+  .curve.to-ink svg path{fill:var(--ink)}
+
+  /* --- Footer --- */
+  footer{background:var(--ink);color:rgba(243,234,217,.65);padding:48px var(--pad-x) 28px;font-size:13px}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(243,234,217,.15)}
+  .fcols h5{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55);margin:0 0 16px}
+  .fcols ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .fcols a:hover{color:var(--cream)}
+  .fbot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;color:rgba(243,234,217,.45)}
+
+  /* --- Responsive --- */
+  @media(max-width:960px){
+    .about-grid,.timeline-grid{grid-template-columns:1fr}
+    .why-outer{grid-template-columns:1fr !important}
+    .why-cards{grid-template-columns:1fr 1fr !important}
+    .why-media{position:static;display:none}
+    .timeline-media{display:none}
+    .team-grid{grid-template-columns:1fr 1fr}
+    .cert-grid{grid-template-columns:1fr 1fr}
+    .fcols{grid-template-columns:1fr 1fr}
+    .overlay-menu .ombody{grid-template-columns:1fr;gap:40px}
+    .omaside{border-left:0;padding-left:0;border-top:1px solid rgba(243,234,217,.12);padding-top:28px}
+    .sh{grid-template-columns:1fr;gap:6px;align-items:start}
+    .sh .r{display:none}
+    .pillars-wrap{grid-template-columns:1fr}
+    .pillars-label{writing-mode:horizontal-tb;transform:none;margin-bottom:16px}
+    .nav-tag{display:none}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad-x)}
+    .brand-mark img{height:60px}
+    .menu-trigger>span:first-child{display:none}
+  }
+  @media(max-width:600px){
+    .why-cards{grid-template-columns:1fr !important}
+    .team-grid{grid-template-columns:1fr}
+    .cert-grid{grid-template-columns:1fr}
+    .pillar{grid-template-columns:40px 1fr;gap:14px}
+    .about-bullets{grid-template-columns:1fr}
+    .fbot{flex-direction:column;gap:8px;text-align:center}
+  }
+  @media(max-width:480px){
+    .fcols{grid-template-columns:1fr}
+    .about-bullets{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><img src="assets/logo-white.svg" id="navLogo" alt="AsiaGreenWood"/></span>
+    </a>
+    <span></span>
+    <button class="menu-trigger" id="menuOpen" aria-label="Open menu">
+      <span>Menu</span>
+      <span class="ham"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay menu -->
+<div class="overlay-menu" id="overlayMenu" role="dialog" aria-hidden="true">
+  <div class="omhead">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-white.svg" alt="Asia Green Wood" style="height:48px;width:auto;display:block"/>
+    </a>
+    <button class="close" id="menuClose" aria-label="Close menu"><span>Close</span><span class="xi"></span></button>
+  </div>
+  <div class="ombody">
+    <ul class="omlinks">
+      <li><a href="index.html" style="--i:0"><span class="idx">01</span> Home</a></li>
+      <li><a href="about.html" style="--i:1"><span class="idx">02</span> About</a></li>
+      <li><a href="environment.html" style="--i:2"><span class="idx">03</span> Environment</a></li>
+      <li><a href="products.html" style="--i:3"><span class="idx">04</span> Products</a></li>
+      <li><a href="index.html#contact" style="--i:4"><span class="idx">05</span> Contact Us</a></li>
+    </ul>
+    <aside class="omaside">
+      <div class="eyem">Get in touch</div>
+      <h4>Sungai Petani,<br>Kedah · Malaysia</h4>
+      <p>Plot 35–38, Kawasan Perusahaan Bakar Arang<br>+604 · 419 7111<br>lktan.agg@gmail.com</p>
+      <span class="cn">东园森界 · Crafted by nature, guided by love</span>
+    </aside>
+  </div>
+  <div class="omfoot">
+    <span>© 2026 Asia Green Wood Sdn Bhd</span>
+    <span><a href="#">EN</a> · <a href="#">中文</a></span>
+  </div>
+</div>
+
+<!-- SVG clip-path defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="hero-curve" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 L 1,0 L 1,0.9 C 0.75,1.0 0.25,1.0 0,0.9 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-media">
+    <img src="assets/agp-about-3.png" alt="Asia Green Wood facility aerial view"/>
+  </div>
+  <div class="hero-copy">
+    <div class="chip"><span class="sq"></span> Our Story · 我们的故事</div>
+    <h1>About<br><span style="font-style:italic">AsiaGreenWood.</span></h1>
+    <p class="hero-sub" style="margin-top:16px">东园森界 · Crafted by nature, guided by love</p>
+  </div>
+</section>
+
+<!-- Our Name -->
+<section id="name">
+  <div class="sh">
+    <div class="num">01 / About Us</div>
+    <h2>About Asia Green Wood</h2>
+    <div class="r">Three words · one philosophy</div>
+  </div>
+  <div class="pillars-wrap">
+    <div class="pillars-label">Our Name</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="28" r="18"/><path d="M28 10v36M10 28h36M16 16c6 6 18 6 24 0M16 40c6-6 18-6 24 0"/></svg>
+        </div>
+        <div class="pillar-content">
+          <h3>ASIA</h3>
+          <p>Represents Asia's ancient heritage of coexisting harmoniously with forests and wood. By embracing wood, we reconnect with nature and revive a timeless cultural relationship between humanity and the forest — sharing this wisdom with the world.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 46V26"/><path d="M28 26c0-9 12-16 12-16s0 12-12 16"/><path d="M28 26c0-9-12-16-12-16s0 12 12 16"/><path d="M20 48h16"/></svg>
+        </div>
+        <div class="pillar-content">
+          <h3>GREEN</h3>
+          <p>Symbolises our commitment to sustainability, green energy and environmental stewardship. It reflects our vision of nurturing a world that functions like a living garden — where forests thrive, ecosystems are respected, and growth is balanced with responsibility.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="18" width="32" height="22" rx="2"/><path d="M12 26h32M20 18v22M28 18v22M36 18v22"/></svg>
+        </div>
+        <div class="pillar-content">
+          <h3>WOOD</h3>
+          <p>Embodies the promotion of wood culture worldwide. Wood is a natural resource meant to be used, yet treated with respect and responsibility. Through mindful and sustainable use, we honour nature while ensuring forests continue to flourish for future generations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision Statement -->
+<section id="vision">
+  <div class="sh">
+    <div class="num">02 / Vision</div>
+    <h2>Vision Statement · 愿景</h2>
+    <div class="r">Our north star</div>
+  </div>
+  <p class="lede" style="max-width:66ch">
+    To lead a new era of timber — where love guides our work, nature is our partner, and sustainability becomes a way of life. Rooted in our Asian heritage, we grow in harmony with the Earth, our people, and the generations to come.
+  </p>
+</section>
+
+
+<!-- Mission Statement -->
+<section id="mission" style="background:var(--cream);border-top:1px solid var(--rule)">
+  <div class="sh">
+    <div class="num">03 / Mission</div>
+    <h2>Mission Statement · 使命</h2>
+    <div class="r">What drives us daily</div>
+  </div>
+  <p class="lede" style="max-width:66ch;margin-bottom:0">
+    At Asia Green Wood, our mission is to renew the sacred bond between people and nature — through how we work, the care we give, and the love we share.
+  </p>
+
+  <div class="pillars-wrap">
+    <div class="pillars-label">Mission Statement</div>
+    <div class="pillars">
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 10c-5 0-9 4-9 9 0 8 9 16 9 16s9-8 9-16c0-5-4-9-9-9z"/>
+            <path d="M28 19v6M25 22h6"/>
+            <path d="M14 42c2-4 7-6 14-6s12 2 14 6"/>
+            <path d="M10 46h36"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Respect the Earth:</h3>
+          <p>Harvest with responsibility, protect our forests with heart, and embrace technologies that reduce carbon emissions by 90% — nurturing a cleaner, more balanced planet.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="28" cy="16" r="6"/>
+            <path d="M18 42c0-5.523 4.477-10 10-10s10 4.477 10 10"/>
+            <circle cx="14" cy="20" r="4.5"/>
+            <path d="M8 40c0-4 2.9-7.5 6.5-8.5"/>
+            <circle cx="42" cy="20" r="4.5"/>
+            <path d="M48 40c0-4-2.9-7.5-6.5-8.5"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Empower Our People:</h3>
+          <p>Create a community filled with joy, meaning, and unity — where every person rediscovers love, purpose, and pride in what they do.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 42l28-28"/>
+            <path d="M32 14h10v10"/>
+            <path d="M12 44c0-5 4-9 9-9h10c5 0 9-4 9-9"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Lead by Example:</h3>
+          <p>Transform from the old ways to the new, proving that sustainability, compassion, and innovation can walk hand in hand.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="28" cy="22" r="10"/>
+            <path d="M25 22c0-1.657 1.343-3 3-3s3 1.343 3 3"/>
+            <path d="M28 12V8M28 36v4M18 22h-4M42 22h-4M21 15l-3-3M38 15l3-3M21 29l-3 3M38 29l3 3"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Inspire the Future:</h3>
+          <p>Show the world that business can be kind — kind to the earth, kind to people, and kind to the generations yet to come.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 44V28"/>
+            <path d="M28 28c0-7 9-12 9-12s0 9-9 12"/>
+            <path d="M28 28c0-7-9-12-9-12s0 9 9 12"/>
+            <path d="M28 36c0-4 6-7 6-7s0 6-6 7"/>
+            <path d="M28 36c0-4-6-7-6-7s0 6 6 7"/>
+            <path d="M20 46h16"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Honour Our Roots:</h3>
+          <p>Celebrate our Asian heritage — blending traditional wisdom and modern innovation to craft a harmonious way forward.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Sustainable Wood Sources -->
+<section id="about" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">04 / Sourcing</div>
+    <h2>Sustainable wood sources.</h2>
+    <div class="r">Vertically integrated · EUDR ready</div>
+  </div>
+  <div class="about-grid">
+    <div class="about-media">
+      <img src="assets/woodsources.png" alt="Traceable timber logs from managed forests"/>
+      <div class="lab"><span>Traceable origin</span><span>Peninsular Malaysia</span></div>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:18px">At Asia Green Wood, we maintain complete control over our supply chain through vertical integration. By managing our own forest resources and an expert in-house timber extraction team, we ensure the highest standards of quality and environmental stewardship.</p>
+      <div class="about-bullets">
+        <div class="about-bullet">
+          <h4>Full Traceability</h4>
+          <p>Materials are 100% traceable to the forest they come from — all the way down to the geolocation.</p>
+        </div>
+        <div class="about-bullet">
+          <h4>EUDR Ready</h4>
+          <p>Fully aligned with the EU Deforestation Regulation — guaranteed proof that our timber is legally sourced and not linked to deforestation or forest degradation.</p>
+        </div>
+        <div class="about-bullet">
+          <h4>Expert in export grade</h4>
+          <p>BB-faced plywood panels shipped to 38 markets, specified to order.</p>
+        </div>
+        <div class="about-bullet">
+          <h4>Integrated value chain</h4>
+          <p>From standing tree to finished panel, every step is managed in-house.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Culture -->
+<section id="culture">
+  <div class="sh">
+    <div class="num">05 / Culture</div>
+    <h2>Working with heart.</h2>
+    <div class="r">Grow together, like a family</div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p class="lede" style="margin-bottom:18px">At Asia Green Wood, we believe a company is only as strong as the bonds between its people. We don't just work together; we grow together like a family.</p>
+      <p class="lede">Our culture is rooted in genuine care for one another — what we call “working with heart.” By fostering an environment of mutual respect and unwavering support, we ensure every team member feels valued, heard, and empowered to contribute to our sustainable future.</p>
+    </div>
+    <div class="culture-collage">
+      <div class="cc-img"><img src="assets/work-culture-1.png" alt="Asia Green Wood team — factory floor briefing"/></div>
+      <div class="cc-img"><img src="assets/work-culture-2.png" alt="Asia Green Wood team — on-site at the plant"/>
+        <div class="lab"><span>Our people · 团队</span><span>Working with heart</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section id="history" style="background:var(--paper)">
+  <div class="sh">
+    <div class="num">06 / History</div>
+    <h2>A legacy of growth &amp; responsibility.</h2>
+    <div class="r">1964 → 2026</div>
+  </div>
+  <div class="timeline-grid">
+    <div class="tl-items">
+      <div class="tl-item">
+        <div class="tl-year">1964</div>
+        <h3>The Foundation</h3>
+        <p><strong>The Legacy Begins:</strong> Asia Plywood Company was incorporated in Sungai Petani, establishing a vital foothold in the Malaysian timber industry.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1995</div>
+        <h3>The Strategic Transition</h3>
+        <p><strong>Modernization:</strong> Under the leadership of Mr. Tan Boon Huat, the company underwent a comprehensive management transformation, ushering in a new era of structural growth and operational modernization.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2005</div>
+        <h3>Global Footprint &amp; Sustainability</h3>
+        <p><strong>Market Expansion:</strong> Successfully executed our inaugural shipment to the UK, marking the start of our global expansion strategy.</p>
+        <p style="margin-top:10px"><strong>Sustainability Milestones:</strong> Achieved accreditation from FSC and MTCS, with the latter receiving official PEFC endorsement in May 2009.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2009</div>
+        <h3>Technological Leap</h3>
+        <p><strong>Facility Advancement:</strong> Relocated to a state-of-the-art manufacturing plant in Bukit Selambau, Kedah.</p>
+        <p style="margin-top:10px"><strong>Precision Engineering:</strong> Integrated high-tech Japanese machinery and an optimized floor plan to meet premium "export-grade" standards.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2017 – 2018</div>
+        <h3>Market Diversification</h3>
+        <p><strong>Japan (2017):</strong> Attained JAS Standards certification, triggering a significant expansion into the Japanese market.</p>
+        <p style="margin-top:10px"><strong>USA (2018):</strong> Attained CARB certification, Uplifted product quality to successfully introduce high-grade overlay plywood to the United States.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <h3>The Next Generation</h3>
+        <p><strong>Leadership Succession:</strong> Mr. LK Tan assumed the role of CEO, spearheading the company's evolution for the next generation.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2024</div>
+        <h3>The Shift to Renewables</h3>
+        <p><strong>Solar Integration:</strong> Installed a rooftop solar array, generating 20% of the factory's electricity needs and marking our first major step toward environmental stewardship.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025</div>
+        <h3>Strategic Rebranding</h3>
+        <p><strong>Asia Green Wood:</strong> Formally transitioned from Asia Plywood to Asia Green Wood Sdn Bhd. This rebranding signifies our commitment to a broader "Green" vision within the Asia Green Group.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026</div>
+        <h3>Carbon Neutrality &amp; Traceability</h3>
+        <p><strong>The Mission to Decarbonize:</strong> Installed advanced gasifier and waste boiler systems to convert wood waste into energy, reducing our carbon footprint by 80%.</p>
+        <p style="margin-top:10px"><strong>Future-Proof Compliance:</strong> Achieved full alignment with EUDR (EU Deforestation Regulation) standards, ensuring total traceability and continued access to global markets.</p>
+      </div>
+    </div>
+    <div class="timeline-media" id="tlMedia">
+      <div class="tl-slide active"><img src="assets/woodsources.png" alt="1964 — Foundation"/><div class="tl-cap">1964 · Foundation</div></div>
+      <div class="tl-slide"><img src="assets/agp-about-2.png" alt="1995 — Strategic transition"/><div class="tl-cap">1995 · Transition</div></div>
+      <div class="tl-slide"><img src="assets/agp-about-5.png" alt="2005 — Global footprint"/><div class="tl-cap">2005 · Global footprint</div></div>
+      <div class="tl-slide"><img src="assets/agp-about-3.png" alt="2009 — Technological leap"/><div class="tl-cap">2009 · New plant</div></div>
+      <div class="tl-slide"><img src="assets/agp-about-1.png" alt="2017–2018 — Market diversification"/><div class="tl-cap">2017–18 · JAS &amp; CARB</div></div>
+      <div class="tl-slide"><img src="assets/ceo-leadership.jpeg" alt="2023 — Next generation"/><div class="tl-cap">2023 · Next generation</div></div>
+      <div class="tl-slide"><img src="assets/solar-array.png" alt="2024 — Shift to renewables"/><div class="tl-cap">2024 · Solar</div></div>
+      <div class="tl-slide"><img src="assets/factory-aerial-solar.jpeg" alt="2025 — Strategic rebranding"/><div class="tl-cap">2025 · Asia Green Wood</div></div>
+      <div class="tl-slide"><img src="assets/gasifier.jpeg" alt="2026 — Carbon neutrality"/><div class="tl-cap">2026 · Decarbonise</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">07 / Compliance</div>
+    <h2>Operating with full legal authority.</h2>
+    <div class="r">5 areas · Full compliance</div>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-eye">01 · Registry</div>
+      <h4>SSM Registered</h4>
+      <p>Fully registered with Suruhanjaya Syarikat Malaysia (Companies Commission of Malaysia)</p>
+      <div class="cert-num">5653-H</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-eye">02 · Forestry</div>
+      <h4>Timber Licence</h4>
+      <p>Valid timber harvesting licences issued by State Forestry Departments across Peninsular Malaysia and Sabah</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-eye">03 · Energy</div>
+      <h4>On-site Renewable Energy</h4>
+      <p>Rooftop solar and an advanced syngas boiler &amp; biochar facility supply the majority of our electricity from our own wood waste</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-eye">04 · Manufacturing</div>
+      <h4>MITI Approved</h4>
+      <p>Manufacturing operations approved under the Ministry of International Trade and Industry</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-eye">05 · Labour</div>
+      <h4>Labor &amp; Compliance</h4>
+      <p>We strictly adhere to all mandatory statutory requirements, manage foreign worker levies in full compliance with government regulations, and prioritise a safe workplace through rigorous OSHA-standard safety training.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section id="why-us">
+  <div class="sh">
+    <div class="num">08 / Why Us</div>
+    <h2>Why choose Asia Green Wood.</h2>
+    <div class="r">60+ years · Global reach · 1 vision</div>
+  </div>
+  <div class="why-outer">
+    <div>
+      <div class="why-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)">
+        <div class="about-bullet" style="padding:clamp(18px,2vw,28px);border:1px solid var(--rule);border-left:2px solid var(--primary);background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Est. 1964</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)">60+ Years of Expertise</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Over six decades of manufacturing relationships, technical knowledge, and industry trust built across generations.</p>
+        </div>
+        <div class="about-bullet" style="padding:clamp(18px,2vw,28px);border:1px solid var(--rule);border-left:2px solid var(--primary);background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Kedah · 2009</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)">Largest Sustainable Plywood Manufacturer</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">The largest sustainable plywood manufacturer in Peninsular Malaysia — a state-of-the-art facility built for scale, precision and responsible production.</p>
+        </div>
+        <div class="about-bullet" style="padding:clamp(18px,2vw,28px);border:1px solid var(--rule);border-left:2px solid var(--primary);background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Certified</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)">FSC® &amp; PEFC® Certified</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Fully certified chain-of-custody sourcing — meeting the world's most respected sustainability and forest management standards.</p>
+        </div>
+        <div class="about-bullet" style="padding:clamp(18px,2vw,28px);border:1px solid var(--rule);border-left:2px solid var(--primary);background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Export</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)">Global Reach</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Serving clients across the UK, Europe, USA, Japan, the Middle East, and Southeast Asia with consistent, export-grade panels.</p>
+        </div>
+        <div class="about-bullet" style="padding:clamp(18px,2vw,28px);border:1px solid var(--rule);border-left:2px solid var(--primary);background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">Species</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)">Premium Wood Selection</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Malaysian tropical hardwoods — red and white species — prized for uniformity in grade and colour, supplemented by plantation softwoods from NZ, Brazil and Uruguay.</p>
+        </div>
+        <div class="about-bullet" style="padding:clamp(18px,2vw,28px);border:1px solid var(--rule);border-left:2px solid var(--primary);background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:10px">In-house</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(17px,1.3vw,21px);margin-bottom:8px;color:var(--ink)">Integrated Supply Chain</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">From standing timber to finished panel, every step managed in-house — giving you consistent quality and full traceability.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="eye" style="color:rgba(243,234,217,.7);margin-bottom:20px">Work With Us</div>
+  <h2>Interested in our work?</h2>
+  <p class="cta-body">Explore our operations or reach out to discuss timber supply, investment, or partnership opportunities.</p>
+  <div class="btn-row">
+    <a href="index.html#products" class="btn primary">See Our Products</a>
+    <a href="index.html#contact" class="btn ghost">Get In Touch</a>
+  </div>
+</section>
+
+<!-- Curve -->
+<div class="curve to-ink" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 Q720,-40 1440,60 L1440,120 L0,120 Z"/></svg>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="fcols">
+    <div>
+      <img src="assets/logo-white.svg" alt="AsiaGreenWood · 东园森界" style="width:260px;max-width:100%;height:auto;display:block;margin-bottom:20px"/>
+      <p style="max-width:36ch;font-size:13px;line-height:1.65;color:rgba(243,234,217,.55)">Responsibly managed plywood and veneer, milled in Kedah, Malaysia since 1964.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#process">Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Trade</h5>
+      <ul>
+        <li><a href="index.html#contact">Request a sample</a></li>
+        <li><a href="index.html#contact">Quote enquiry</a></li>
+        <li><a href="#">Specifications</a></li>
+        <li><a href="#">Certificates</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach</h5>
+      <ul>
+        <li>+604 · 419 7111</li>
+        <li>lktan.agg@gmail.com</li>
+        <li>Sungai Petani, Kedah · MY</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Asia Green Wood Sdn Bhd · 5653-H · All rights reserved</span>
+    <span>Privacy · Terms · Cookies</span>
+  </div>
+</footer>
+
+<script>
+  const navEl = document.getElementById('nav');
+  const navLogo = document.getElementById('navLogo');
+  function onScroll(){
+    if(window.scrollY > 60){
+      navEl.classList.add('scrolled');
+      if(navLogo) navLogo.src = 'assets/logo.svg';
+    } else {
+      navEl.classList.remove('scrolled');
+      if(navLogo) navLogo.src = 'assets/logo-white.svg';
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // --- Timeline: scroll-linked image switch ---
+  (function(){
+    const media = document.getElementById('tlMedia');
+    if(!media) return;
+    const items = Array.from(document.querySelectorAll('#history .tl-item'));
+    const slides = Array.from(media.querySelectorAll('.tl-slide'));
+    let current = 0;
+    function setActive(i){
+      if(i===current || i<0 || i>=slides.length) return;
+      current = i;
+      slides.forEach((s,k)=>s.classList.toggle('active', k===i));
+    }
+    const io = new IntersectionObserver((entries)=>{
+      // pick the entry closest to viewport centre among those intersecting
+      let best=null, bestDist=Infinity;
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const r=e.boundingClientRect;
+          const dist=Math.abs((r.top+r.bottom)/2 - window.innerHeight/2);
+          if(dist<bestDist){bestDist=dist; best=e.target;}
+        }
+      });
+      if(best){ const i=items.indexOf(best); if(i>=0) setActive(i); }
+    }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+    items.forEach(it=>io.observe(it));
+  })();
+
+  const om = document.getElementById('overlayMenu');
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  function openMenu(){ om.classList.add('open'); om.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ om.classList.remove('open'); om.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  openBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  om.querySelectorAll('.omlinks a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if(e.key==='Escape' && om.classList.contains('open')) closeMenu(); });
+</script>
+</body>
+</html>

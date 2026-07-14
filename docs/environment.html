@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="assets/logomark.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Environment — AsiaGreenWood · 东园森界</title>
+<meta name="description" content="Asia Green Wood's commitment to the environment — responsible sourcing, sustainable factory operations, solar energy, chemical water treatment and biomass energy." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+  @font-face{font-family:"Brandon Grotesque";src:url("assets/fonts/BrandonGrotesque-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+</style>
+<style>
+  :root{
+    --bark:#4A2E18;--bark-2:#6B4423;--bark-3:#8A6A4A;
+    --cream:#F3EAD9;--cream-2:#E8DBC3;--paper:#FBF6EC;
+    --ink:#1F1915;--ink-2:#463A30;
+    --moss:#3E5A3C;--moss-2:#6B8260;
+    --rule:rgba(31,25,21,.14);
+    --primary:var(--bark);--primary-2:var(--bark-2);
+    --surface:var(--paper);--surface-2:var(--cream);
+    --ff-display:"Libre Caslon Display",ui-serif,Georgia,serif;
+    --ff-body:"Brandon Grotesque",system-ui,sans-serif;
+    --ff-mono:"JetBrains Mono",ui-monospace,monospace;
+    --ff-cn:"Noto Serif SC",serif;
+    --pad-x:clamp(24px,5vw,96px);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--ff-body);-webkit-font-smoothing:antialiased}
+  body{font-size:16px;line-height:1.55;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--ff-display);font-weight:400;letter-spacing:-.01em;margin:0;line-height:1.04}
+  h1{font-size:clamp(40px,6vw,96px)}
+  h2{font-size:clamp(28px,4vw,60px);line-height:1.06}
+  h3{font-size:clamp(18px,1.5vw,24px);line-height:1.18}
+  p{color:var(--ink-2);margin:0}
+  .eye{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-2);font-weight:500}
+  .lede{font-size:clamp(16px,1.1vw,18px);color:var(--ink-2);line-height:1.7}
+
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+  /* --- Nav --- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,backdrop-filter .3s}
+  header.nav.scrolled{background:color-mix(in oklab,var(--surface) 92%,transparent);backdrop-filter:blur(14px);border-bottom-color:var(--rule)}
+  .nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:20px var(--pad-x)}
+  .brand{display:flex;align-items:center}
+  .brand-mark img{height:60px;width:auto;object-fit:contain;transition:opacity .3s}
+  .nav-tag{justify-self:start;margin-left:16px;padding-left:20px;border-left:1px solid rgba(243,234,217,.35);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.85);transition:color .3s,border-color .3s}
+  header.nav.scrolled .nav-tag{color:var(--ink-2);border-left-color:var(--rule)}
+  .menu-trigger{display:flex;align-items:center;gap:14px;background:transparent;border:0;cursor:pointer;color:var(--cream);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:8px 4px;transition:color .3s}
+  header.nav.scrolled .menu-trigger{color:var(--ink)}
+  .menu-trigger .ham{display:inline-flex;flex-direction:column;gap:5px;width:26px}
+  .menu-trigger .ham i{display:block;height:1.5px;background:currentColor;transform-origin:center}
+  .menu-trigger .ham i:nth-child(1){width:100%}
+  .menu-trigger .ham i:nth-child(2){width:70%;align-self:flex-end}
+
+  /* --- Overlay menu --- */
+  .overlay-menu{position:fixed;inset:0;z-index:300;background:var(--ink);color:var(--cream);display:grid;grid-template-rows:auto 1fr auto;opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(.2,.7,.2,1)}
+  .overlay-menu.open{opacity:1;pointer-events:auto}
+  .overlay-menu .omhead{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-bottom:1px solid rgba(243,234,217,.12)}
+  .mk{width:40px;height:40px;border-radius:50%;background:var(--cream);display:grid;place-items:center;overflow:hidden;flex-shrink:0}
+  .mk img{width:76%;height:76%;object-fit:contain}
+  .overlay-menu .close{background:transparent;border:0;color:var(--cream);cursor:pointer;display:flex;align-items:center;gap:14px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .close .xi{position:relative;width:22px;height:22px}
+  .close .xi::before,.close .xi::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:currentColor}
+  .close .xi::before{transform:rotate(45deg)}
+  .close .xi::after{transform:rotate(-45deg)}
+  .overlay-menu .ombody{display:grid;grid-template-columns:1.4fr 1fr;padding:clamp(40px,6vw,96px) var(--pad-x);gap:80px;align-items:center}
+  .omlinks{list-style:none;padding:0;margin:0}
+  .omlinks li{overflow:hidden;border-bottom:1px solid rgba(243,234,217,.08)}
+  .omlinks a{display:flex;align-items:baseline;gap:24px;padding:18px 0;font-family:var(--ff-display);font-size:clamp(30px,4vw,60px);line-height:1;color:var(--cream);transition:transform .3s,color .3s;transform:translateY(20px);opacity:0}
+  .overlay-menu.open .omlinks a{transform:translateY(0);opacity:1;transition-delay:calc(var(--i,0)*60ms + 150ms);transition-duration:.5s}
+  .omlinks a:hover{color:var(--bark-3);transform:translateX(12px) translateY(0)}
+  .omlinks .idx{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;color:rgba(243,234,217,.4);align-self:flex-start;padding-top:10px}
+  .omaside{border-left:1px solid rgba(243,234,217,.12);padding-left:60px;max-width:420px}
+  .omaside .eyem{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.5);margin-bottom:20px}
+  .omaside h4{font-family:var(--ff-display);font-size:24px;color:var(--cream);margin:0 0 12px;line-height:1.2}
+  .omaside p{color:rgba(243,234,217,.7);font-size:14px;line-height:1.65}
+  .omaside .cn{display:block;font-family:var(--ff-cn);font-size:13px;letter-spacing:.14em;margin-top:18px;color:rgba(243,234,217,.5)}
+  .omfoot{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad-x);border-top:1px solid rgba(243,234,217,.12);font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55)}
+  .omfoot a{color:rgba(243,234,217,.8)}
+
+  /* --- Hero --- */
+  .hero{position:relative;height:100vh;min-height:100vh;display:flex;align-items:flex-start;overflow:hidden;background:#000;clip-path:url(#hero-curve);-webkit-clip-path:url(#hero-curve);padding-bottom:100px}
+  .hero-media{position:absolute;inset:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,6,3,.82) 0%,rgba(10,6,3,.45) 50%,rgba(10,6,3,.75) 100%)}
+  .hero-media::before{content:"";position:absolute;inset:0;background:rgba(10,6,3,.25);z-index:1}
+  .hero-copy{position:relative;z-index:3;padding:clamp(120px,18vh,200px) var(--pad-x) clamp(60px,8vw,100px);color:var(--cream)}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid rgba(243,234,217,.4);border-radius:999px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);backdrop-filter:blur(6px);margin-bottom:32px}
+  .chip .sq{width:6px;height:6px;background:var(--moss-2);border-radius:1px}
+  .hero-copy h1{color:var(--cream);max-width:20ch;margin-bottom:16px}
+  .hero-sub{font-family:var(--ff-cn);font-size:13px;letter-spacing:.18em;color:rgba(243,234,217,.7)}
+
+  /* --- Sections --- */
+  section{padding-block:clamp(72px,9vw,140px);padding-inline:var(--pad-x);position:relative}
+
+  .sh{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:40px;margin-bottom:clamp(40px,5vw,64px);padding-bottom:22px;border-bottom:1px solid var(--rule)}
+  .sh .num{font-family:var(--ff-mono);font-size:12px;letter-spacing:.2em;color:var(--primary)}
+  .sh h2{max-width:22ch}
+  .sh .r{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+
+  /* --- Two-col grid --- */
+  .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(48px,6vw,120px);align-items:center}
+  .about-grid.flip{grid-template-columns:1.25fr 1fr}
+  .about-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+  .about-media img{width:100%;height:100%;object-fit:cover}
+  .about-media .lab{position:absolute;bottom:0;left:0;right:0;background:rgba(15,10,6,.78);color:var(--cream);padding:14px 18px;display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* --- Stat pills --- */
+  .stat-row{display:flex;gap:clamp(16px,2.5vw,32px);flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid var(--rule)}
+  .stat-pill{display:flex;flex-direction:column;gap:4px}
+  .stat-pill .val{font-family:var(--ff-display);font-size:clamp(28px,3.5vw,48px);color:var(--ink);line-height:1}
+  .stat-pill .lbl{font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2)}
+
+  /* --- Pillars --- */
+  .pillars-wrap{display:grid;grid-template-columns:28px 1fr;gap:clamp(32px,4vw,64px);margin-top:clamp(48px,6vw,80px)}
+  .pillars-label{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--ff-mono);font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--primary-2);align-self:center;white-space:nowrap}
+  .pillars{display:grid;gap:0}
+  .pillar{display:grid;grid-template-columns:clamp(44px,4vw,60px) 1fr;gap:clamp(20px,2.5vw,40px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid var(--rule);align-items:start}
+  .pillar-icon svg{width:clamp(36px,3.5vw,52px);height:clamp(36px,3.5vw,52px)}
+  .pillar-content h3{font-family:var(--ff-body);font-size:clamp(16px,1.15vw,19px);font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.01em}
+  .pillar-content p{font-family:var(--ff-mono);font-size:clamp(10px,0.8vw,11.5px);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);line-height:1.9}
+
+  /* --- Cards --- */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+  .card{padding:clamp(22px,2.5vw,36px);border:1px solid var(--rule);border-radius:2px;background:#fff;transition:box-shadow .3s}
+  .card:hover{box-shadow:0 16px 48px -24px rgba(31,25,21,.18)}
+  .card-eye{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-bottom:16px}
+  .card h3{font-size:clamp(17px,1.3vw,21px);margin-bottom:10px;color:var(--ink)}
+  .card p{font-size:13px;color:var(--ink-2);line-height:1.65}
+  .card-icon{margin-bottom:20px}
+  .card-icon svg{width:clamp(36px,3vw,48px);height:clamp(36px,3vw,48px)}
+  /* image inside each factory card */
+  .card-img{margin:calc(-1 * clamp(22px,2.5vw,36px)) calc(-1 * clamp(22px,2.5vw,36px)) clamp(20px,2vw,28px);aspect-ratio:16/10;overflow:hidden;border-radius:2px 2px 0 0}
+  .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .card:hover .card-img img{transform:scale(1.04)}
+
+  /* --- Clickable film thumbnail in quote band --- */
+  .env-video-btn{display:inline-block;position:relative;width:min(60vw,1000px);aspect-ratio:16/9;border:1px solid rgba(255,255,255,.5);border-radius:4px;overflow:hidden;cursor:pointer;padding:0;background:#000;margin:0 auto clamp(16px,2vw,28px);box-shadow:0 30px 70px -30px rgba(0,0,0,.6);transition:transform .3s,box-shadow .3s}
+  .env-video-btn:hover{transform:translateY(-3px);box-shadow:0 36px 80px -28px rgba(0,0,0,.7)}
+  .env-video-btn video{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
+  .env-video-btn .evb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.85);transition:background .3s,transform .3s}
+  .env-video-btn:hover .evb-play{background:rgba(255,255,255,.32);transform:translate(-50%,-50%) scale(1.06)}
+  .env-video-btn .evb-play::before{content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff}
+  .env-video-btn .evb-lbl{position:absolute;bottom:10px;left:0;right:0;font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+
+  /* --- Video lightbox modal --- */
+  .vmodal{position:fixed;inset:0;z-index:400;background:rgba(8,5,3,.92);display:none;align-items:center;justify-content:center;padding:clamp(20px,5vw,80px)}
+  .vmodal.open{display:flex}
+  .vmodal-inner{position:relative;width:min(1100px,100%);aspect-ratio:16/9;background:#000;border-radius:4px;overflow:hidden;box-shadow:0 40px 120px -30px rgba(0,0,0,.8)}
+  .vmodal-inner video{width:100%;height:100%;object-fit:contain;background:#000}
+  .vmodal-close{position:absolute;top:24px;right:28px;z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.4);color:#fff;font-size:24px;line-height:1;cursor:pointer;transition:background .2s}
+  .vmodal-close:hover{background:rgba(255,255,255,.2)}
+
+  /* --- Quote band --- */
+  .quote-band{background:var(--moss);color:var(--cream);padding:clamp(56px,8vw,120px) var(--pad-x);text-align:center}
+  .quote-band blockquote{font-family:var(--ff-display);font-size:clamp(22px,3vw,44px);line-height:1.2;max-width:22ch;margin:0 auto 24px;color:var(--cream);font-style:italic}
+  .quote-band .attr{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,234,217,.6)}
+
+  /* --- Machine section --- */
+  .machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)}
+  .machine-img{aspect-ratio:4/3;overflow:hidden;border-radius:2px;position:relative}
+  .machine-img img{width:100%;height:100%;object-fit:cover}
+  .machine-img .lab{position:absolute;bottom:0;left:0;right:0;background:rgba(15,10,6,.72);color:var(--cream);padding:12px 16px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* --- Env gallery strip --- */
+  .gallery-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,20px);margin-top:clamp(40px,5vw,64px)}
+  .gallery-strip .gi{aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+  .gallery-strip .gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gallery-strip .gi:hover img{transform:scale(1.04)}
+
+
+  /* --- CTA --- */
+  .cta-section{background:var(--primary);color:var(--cream);text-align:center;padding-bottom:clamp(60px,8vw,100px)}
+  .cta-section h2{color:var(--cream);margin-bottom:20px}
+  .cta-section .cta-body{color:rgba(243,234,217,.8);max-width:48ch;margin:0 auto 36px;font-size:clamp(15px,1.05vw,17px);line-height:1.7}
+  .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.03em;transition:all .2s;border:1px solid transparent;cursor:pointer;font-family:var(--ff-body)}
+  .btn.primary{background:var(--cream);color:var(--primary)}
+  .btn.primary:hover{background:var(--ink);color:var(--cream);transform:translateY(-1px)}
+  .btn.ghost{border-color:rgba(243,234,217,.5);color:var(--cream)}
+  .btn.ghost:hover{background:rgba(243,234,217,.1);transform:translateY(-1px)}
+
+  /* --- Curve --- */
+  .curve{display:block;width:100%;height:clamp(100px,10vw,160px);line-height:0;margin:-1px 0;pointer-events:none;position:relative;z-index:50;overflow:hidden}
+  .curve svg{display:block;width:100%;height:100%}
+  .curve.to-ink{z-index:60;margin-top:-1px;position:relative;background:var(--primary)}
+  .curve.to-ink svg path{fill:var(--ink)}
+
+  /* --- Footer --- */
+  footer{background:var(--ink);color:rgba(243,234,217,.65);padding:48px var(--pad-x) 28px;font-size:13px}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(243,234,217,.15)}
+  .fcols h5{font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,234,217,.55);margin:0 0 16px}
+  .fcols ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .fcols a:hover{color:var(--cream)}
+  .fbot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;color:rgba(243,234,217,.45)}
+
+  /* --- Responsive --- */
+  @media(max-width:960px){
+    .about-grid,.about-grid.flip,.machine-grid{grid-template-columns:1fr}
+    .energy-outer,.standards-outer{grid-template-columns:1fr !important}
+    .standards-img{display:none}
+    .energy-stats,.standards-cards{grid-template-columns:1fr 1fr !important}
+    .card-grid{grid-template-columns:1fr 1fr}
+    .gallery-strip{grid-template-columns:1fr 1fr}
+    .fcols{grid-template-columns:1fr 1fr}
+    .overlay-menu .ombody{grid-template-columns:1fr;gap:40px}
+    .omaside{border-left:0;padding-left:0;border-top:1px solid rgba(243,234,217,.12);padding-top:28px}
+    .sh{grid-template-columns:1fr;gap:6px;align-items:start}
+    .sh .r{display:none}
+    .pillars-wrap{grid-template-columns:1fr}
+    .pillars-label{writing-mode:horizontal-tb;transform:none;margin-bottom:16px}
+    .nav-tag{display:none}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad-x)}
+    .brand-mark img{height:60px}
+    .menu-trigger>span:first-child{display:none}
+  }
+  @media(max-width:600px){
+    .card-grid{grid-template-columns:1fr}
+    .gallery-strip{grid-template-columns:1fr}
+    .machine-grid{grid-template-columns:1fr}
+    .energy-stats,.standards-cards{grid-template-columns:1fr !important}
+    .stat-row{flex-direction:column;gap:16px}
+    .fbot{flex-direction:column;gap:8px;text-align:center}
+  }
+  @media(max-width:480px){
+    .fcols{grid-template-columns:1fr}
+    .stat-row{flex-wrap:wrap;gap:20px}
+    .machine-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><img src="assets/logo-white.svg" id="navLogo" alt="AsiaGreenWood"/></span>
+    </a>
+    <span></span>
+    <button class="menu-trigger" id="menuOpen" aria-label="Open menu">
+      <span>Menu</span>
+      <span class="ham"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay menu -->
+<div class="overlay-menu" id="overlayMenu" role="dialog" aria-hidden="true">
+  <div class="omhead">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-white.svg" alt="Asia Green Wood" style="height:48px;width:auto;display:block"/>
+    </a>
+    <button class="close" id="menuClose" aria-label="Close menu"><span>Close</span><span class="xi"></span></button>
+  </div>
+  <div class="ombody">
+    <ul class="omlinks">
+      <li><a href="index.html" style="--i:0"><span class="idx">01</span> Home</a></li>
+      <li><a href="about.html" style="--i:1"><span class="idx">02</span> About</a></li>
+      <li><a href="environment.html" style="--i:2"><span class="idx">03</span> Environment</a></li>
+      <li><a href="products.html" style="--i:3"><span class="idx">04</span> Products</a></li>
+      <li><a href="index.html#contact" style="--i:4"><span class="idx">05</span> Contact Us</a></li>
+    </ul>
+    <aside class="omaside">
+      <div class="eyem">Get in touch</div>
+      <h4>Sungai Petani,<br>Kedah · Malaysia</h4>
+      <p>Plot 35–38, Kawasan Perusahaan Bakar Arang<br>+604 · 419 7111<br>lktan.agg@gmail.com</p>
+      <span class="cn">东园森界 · Crafted by nature, guided by love</span>
+    </aside>
+  </div>
+  <div class="omfoot">
+    <span>© 2026 Asia Green Wood Sdn Bhd</span>
+    <span><a href="#">EN</a> · <a href="#">中文</a></span>
+  </div>
+</div>
+
+<!-- SVG clip-path defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="hero-curve" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 L 1,0 L 1,0.9 C 0.75,1.0 0.25,1.0 0,0.9 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-media">
+    <img src="assets/env-4.png" alt="Forest — Asia Green Wood's commitment to nature"/>
+  </div>
+  <div class="hero-copy">
+    <div class="chip"><span class="sq"></span> Sustainability · 可持续发展</div>
+    <h1>Our<br><span style="font-style:italic">Environment.</span></h1>
+    <p class="hero-sub" style="margin-top:16px">东园森界 · Growing in harmony with the Earth</p>
+  </div>
+</section>
+
+<!-- 01 — Core Commitment -->
+<section id="commitment">
+  <div class="sh">
+    <div class="num">01 / Commitment</div>
+    <h2>Business built with<br><span style="font-style:italic">nature in mind.</span></h2>
+    <div class="r">FSC® · PEFC® certified</div>
+  </div>
+  <div class="about-grid">
+    <div class="about-media">
+      <img src="assets/certified-origin.png" alt="Managed forest — certified origin"/>
+      <div class="lab"><span>Certified origin</span><span>Peninsular Malaysia</span></div>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:18px">The very nature of business in the wood industry is never far from the subject of the environment. At Asia Green Wood, we believe that environmental care isn't a constraint on our business — it is the foundation of it.</p>
+      <p class="lede" style="margin-bottom:18px">We source exclusively from FSC® and PEFC® certified suppliers, ensuring full chain-of-custody traceability from forest to finished panel. Our supplier relationships are built on regular appraisals, strict compliance checks, and a shared commitment to responsible forest management.</p>
+      <p class="lede">As the largest sustainable plywood manufacturer in Peninsular Malaysia, we operate with the lowest possible environmental footprint — through experienced practices, minimal wood waste, active recycling, and adhesives that meet the European E1 standard.</p>
+      <div class="stat-row">
+        <div class="stat-pill">
+          <span class="val">100%</span>
+          <span class="lbl">Sustainable sources</span>
+        </div>
+        <div class="stat-pill">
+          <span class="val">100%</span>
+          <span class="lbl">Water treated</span>
+        </div>
+        <div class="stat-pill">
+          <span class="val">E1</span>
+          <span class="lbl">Adhesive standard</span>
+        </div>
+        <div class="stat-pill">
+          <span class="val">Zero</span>
+          <span class="lbl">Waste to landfill</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote band — mountain divider behind, pine forest overflows naturally -->
+<div style="position:relative;background:var(--paper)">
+
+  <!-- Layer 1: mountain silhouette as top divider (behind the forest) -->
+  <img src="assets/env-banner.png" aria-hidden="true"
+       style="display:block;width:100%;height:auto;position:relative;z-index:1;pointer-events:none"/>
+
+  <!-- Layer 2: pine forest sits on top, full image, no crop -->
+  <img src="assets/env-wide.png" aria-hidden="true"
+       style="display:block;width:100%;height:auto;position:relative;z-index:2;margin-top:-10vw;pointer-events:none"/>
+
+  <!-- Quote text — centred over the forest -->
+  <div style="position:absolute;inset:0;z-index:10;display:flex;align-items:flex-end;justify-content:center;padding-bottom:clamp(28px,4vw,56px)">
+    <div style="text-align:center">
+      <button class="env-video-btn" onclick="openEnvVideo()" aria-label="Play the Asia Green Wood film">
+        <video src="assets/hero-banner.mp4" muted loop playsinline autoplay></video>
+        <span class="evb-play"></span>
+        <span class="evb-lbl">Watch the film</span>
+      </button>
+      <blockquote style="font-family:var(--ff-display);font-size:clamp(22px,3vw,44px);line-height:1.2;max-width:22ch;margin:0 auto 24px;color:#fff;font-style:italic">"Every board we make begins and ends with respect for the forest."</blockquote>
+      <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6)">Asia Green Wood · Environmental Philosophy</div>
+    </div>
+  </div>
+</div>
+
+<!-- Video lightbox -->
+<div id="envVideoModal" class="vmodal" role="dialog" aria-modal="true" onclick="closeEnvVideo(event)">
+  <button class="vmodal-close" onclick="closeEnvVideo(event)" aria-label="Close video">&times;</button>
+  <div class="vmodal-inner">
+    <video id="envVideoPlayer" src="assets/hero-banner.mp4" controls playsinline></video>
+  </div>
+
+</div>
+
+<!-- 02 — Responsible Sourcing -->
+<section id="sourcing" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">02 / Sourcing</div>
+    <h2>100% sustainable<br><span style="font-style:italic">wood sources.</span></h2>
+    <div class="r">Certified supply chain</div>
+  </div>
+  <div class="pillars-wrap">
+    <div class="pillars-label">Responsible Sourcing</div>
+    <div class="pillars">
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#3E5A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 44V24"/>
+            <path d="M28 24c0-9 12-16 12-16s0 12-12 16"/>
+            <path d="M28 24c0-9-12-16-12-16s0 12 12 16"/>
+            <path d="M28 36c0-5 8-9 8-9s0 8-8 9"/>
+            <path d="M28 36c0-5-8-9-8-9s0 8 8 9"/>
+            <path d="M18 48h20"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>FSC® &amp; PEFC® Certified Supply</h3>
+          <p>We source exclusively from certified forest operations, ensuring every log can be traced from a responsibly managed concession to finished panel — with full chain-of-custody documentation at every step.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#3E5A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 28c0-7.73 6.27-14 14-14s14 6.27 14 14-6.27 14-14 14"/>
+            <path d="M28 14v28M14 28h14"/>
+            <path d="M21 21l7 7-7 7"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Regular Supplier Appraisals</h3>
+          <p>Our procurement team conducts structured appraisals of all supplier partners on a rolling basis. Compliance with legal, environmental and quality standards is non-negotiable and actively monitored.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#3E5A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="28" cy="28" r="16"/>
+            <path d="M28 18v10l7 4"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Minimal Waste Practices</h3>
+          <p>Decades of operational experience have allowed us to refine our cutting, peeling and pressing processes to extract maximum yield from every log — reducing waste at the source rather than managing it downstream.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#3E5A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 44l10-14 8 8 8-10 6 16"/>
+            <path d="M10 44h36"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Waste Recycling &amp; Separation</h3>
+          <p>All production residues — bark, trim offcuts, sanding dust and core waste — are separated and channelled into our biomass energy programme. Nothing goes to landfill. Everything is given a second life.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="#3E5A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 18h40M14 18l6 26M42 18l-6 26"/>
+            <circle cx="28" cy="14" r="4"/>
+            <path d="M20 44h16"/>
+          </svg>
+        </div>
+        <div class="pillar-content">
+          <h3>Forest Management — Logfisher Technology</h3>
+          <p>We operate six Logfisher units — specialised cable-based machines that extract timber logs from the forest. By minimising ground disturbance and soil compaction, they protect the fragile forest floor and preserve the integrity of the natural ecosystem, reducing the need for heavy machinery and mitigating erosion and damage to non-target vegetation.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 03 — Factory Sustainability -->
+<section id="factory">
+  <div class="sh">
+    <div class="num">03 / Factory</div>
+    <h2>Sustainable factory<br><span style="font-style:italic">implementation.</span></h2>
+    <div class="r">Solar · Water · Operations</div>
+  </div>
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-img"><img src="assets/sustain-solar.png" alt="Rooftop solar panels"/></div>
+      <div class="card-eye">01 · Solar</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="28" cy="28" r="9"/>
+          <path d="M28 8v4M28 44v4M8 28h4M44 28h4M14.34 14.34l2.83 2.83M38.83 38.83l2.83 2.83M14.34 41.66l2.83-2.83M38.83 17.17l2.83-2.83"/>
+        </svg>
+      </div>
+      <h3>Solar Panels Implementation</h3>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.65;margin-top:10px">We have fitted as many solar panels as possible across the available factory roof area through a large-scale installation. This array currently supplies 15–25% of our total electricity needs, reducing both our carbon footprint and our energy cost at scale.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="assets/sustain-water.png" alt="Water treatment tank"/></div>
+      <div class="card-eye">02 · Water</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M28 10c-6 8-12 14-12 20a12 12 0 0 0 24 0c0-6-6-12-12-20z"/>
+          <path d="M20 34c0 4 3.58 6 8 6"/>
+        </svg>
+      </div>
+      <h3>Responsible Water Treatment</h3>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.65;margin-top:10px">We strictly prohibit the discharge of glue-contaminated wastewater into public irrigation canals. Instead, we partner with specialised treatment facilities that use advanced filtration to extract harmful resins and formaldehyde — keeping our process clean and protecting local water sources and the community.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="assets/sustain-operations.png" alt="Sustainable factory operations"/></div>
+      <div class="card-eye">03 · Operations</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 56 56" fill="none" stroke="#4A2E18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="10" y="28" width="36" height="18" rx="2"/>
+          <path d="M16 28v-8a12 12 0 0 1 24 0v8"/>
+          <path d="M28 34v6M24 37h8"/>
+        </svg>
+      </div>
+      <h3>Sustainable Operations</h3>
+      <p style="font-size:13px;color:var(--ink-2);line-height:1.65;margin-top:10px">Our entire factory workflow is designed around efficiency and minimal impact. Dust extraction systems, low-emission adhesives meeting European E1 standards, LED lighting throughout, and smart energy monitoring ensure we operate at the frontier of sustainable manufacturing practice.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 04 — Wood to Energy -->
+<section id="energy" style="background:var(--ink);color:var(--cream)">
+  <div class="sh" style="border-bottom-color:rgba(243,234,217,.15)">
+    <div class="num" style="color:var(--bark-3)">04 / Energy</div>
+    <h2 style="color:var(--cream)">Syngas boiler, biochar &amp;<br><span style="font-style:italic">a circular economy.</span></h2>
+    <div class="r" style="color:rgba(243,234,217,.55)">Syngas · Biochar · Zero waste</div>
+  </div>
+
+  <div class="energy-outer" style="display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(48px,6vw,100px);align-items:start">
+    <div>
+      <p style="font-size:clamp(16px,1.1vw,18px);color:rgba(243,234,217,.8);line-height:1.7;margin-bottom:20px">Our commitment to sustainability goes beyond what is expected of us. We have invested in an advanced syngas boiler and biochar facility that produces clean electrical energy and biochar from our own wood waste.</p>
+      <p style="font-size:clamp(16px,1.1vw,18px);color:rgba(243,234,217,.8);line-height:1.7;margin-bottom:36px">This facility is a cornerstone of our energy strategy, supplying 70–75% of our total electricity and savings. It allows us to reduce carbon by up to 90% while creating a substantial new revenue stream — demonstrating our commitment to a circular, low-carbon economy.</p>
+
+      <div class="energy-stats" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)">
+        <div style="padding:clamp(18px,2vw,28px);border:1px solid rgba(243,234,217,.15);border-radius:2px">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bark-3);margin-bottom:8px">Electricity supplied</div>
+          <div style="font-family:var(--ff-display);font-size:clamp(20px,2vw,28px);color:var(--cream);margin-bottom:8px">70–75%</div>
+          <p style="font-size:13px;color:rgba(243,234,217,.6);line-height:1.6">Of our total electricity and savings generated from the syngas boiler and biochar facility.</p>
+        </div>
+        <div style="padding:clamp(18px,2vw,28px);border:1px solid rgba(243,234,217,.15);border-radius:2px">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bark-3);margin-bottom:8px">CO₂ reduction</div>
+          <div style="font-family:var(--ff-display);font-size:clamp(20px,2vw,28px);color:var(--cream);margin-bottom:8px">–90% Emissions</div>
+          <p style="font-size:13px;color:rgba(243,234,217,.6);line-height:1.6">Carbon reduced by up to 90% by converting wood waste into clean energy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syngas boiler image -->
+    <div class="machine-grid" style="grid-template-columns:1fr">
+      <div class="machine-img" style="aspect-ratio:4/3">
+        <img src="assets/syngas-boiler.png" alt="Advanced syngas boiler — clean energy from wood waste"/>
+        <div class="lab">Syngas boiler &amp; biochar facility</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — Adhesives & Standards -->
+<section id="standards" style="background:var(--cream)">
+  <div class="sh">
+    <div class="num">05 / Standards</div>
+    <h2>Low-emission adhesives<br><span style="font-style:italic">&amp; compliance.</span></h2>
+    <div class="r">European E1 · CARB P2</div>
+  </div>
+  <div class="standards-outer" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,100px);align-items:center">
+    <div>
+      <p class="lede" style="margin-bottom:20px">Our manufacturing process uses only adhesives that comply with the European E1 standard for formaldehyde emissions — one of the most stringent global benchmarks for indoor air quality and environmental safety. All glue lines are tested and certified to protect both our workers and end users.</p>
+      <p class="lede" style="margin-bottom:0">This commitment to low-emission chemistry, combined with our CARB Phase 2 compliance for the North American market, means our panels meet or exceed the requirements of every major market we serve.</p>
+    </div>
+    <div class="standards-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)">
+        <div style="padding:clamp(18px,2vw,24px);border:1px solid var(--rule);border-left:2px solid var(--moss);border-radius:2px;background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:8px">Europe</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(16px,1.2vw,20px);margin-bottom:6px;color:var(--ink)">European E1</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">≤ 0.1 ppm formaldehyde emissions. Meeting the EN 13986 standard for wood-based panels in construction.</p>
+        </div>
+        <div style="padding:clamp(18px,2vw,24px);border:1px solid var(--rule);border-left:2px solid var(--moss);border-radius:2px;background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:8px">North America</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(16px,1.2vw,20px);margin-bottom:6px;color:var(--ink)">CARB Phase 2</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Certified compliant with California Air Resources Board Phase 2 — accepted across all US states and Canada.</p>
+        </div>
+        <div style="padding:clamp(18px,2vw,24px);border:1px solid var(--rule);border-left:2px solid var(--moss);border-radius:2px;background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:8px">Forest</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(16px,1.2vw,20px);margin-bottom:6px;color:var(--ink)">FSC® Certified</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Forest Stewardship Council chain-of-custody certification — the global gold standard for responsible forestry.</p>
+        </div>
+        <div style="padding:clamp(18px,2vw,24px);border:1px solid var(--rule);border-left:2px solid var(--moss);border-radius:2px;background:var(--paper)">
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:8px">Forest</div>
+          <h4 style="font-family:var(--ff-display);font-size:clamp(16px,1.2vw,20px);margin-bottom:6px;color:var(--ink)">PEFC® Certified</h4>
+          <p style="font-size:13px;color:var(--ink-2);line-height:1.6">Programme for the Endorsement of Forest Certification — ensuring sustainable forest management at source. Ref: SIRIM-COC-0014.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="eye" style="color:rgba(243,234,217,.7);margin-bottom:20px">Our Products</div>
+  <h2>Panels built with the planet in mind.</h2>
+  <p class="cta-body">Explore our full range of certified plywood products — every panel traceable, every sheet made to last.</p>
+  <div class="btn-row">
+    <a href="products.html" class="btn primary">View Products</a>
+    <a href="about.html" class="btn ghost">Our Story</a>
+  </div>
+</section>
+
+<!-- Footer curve -->
+<div class="curve to-ink" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 Q720,-40 1440,60 L1440,120 L0,120 Z"/></svg>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="fcols">
+    <div>
+      <img src="assets/logo-white.svg" alt="AsiaGreenWood · 东园森界" style="width:260px;max-width:100%;height:auto;display:block;margin-bottom:20px"/>
+      <p style="max-width:36ch;font-size:13px;line-height:1.65;color:rgba(243,234,217,.55)">Responsibly managed plywood and veneer, milled in Kedah, Malaysia since 1964.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="environment.html">Environment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Trade</h5>
+      <ul>
+        <li><a href="index.html#contact">Request a sample</a></li>
+        <li><a href="index.html#contact">Quote enquiry</a></li>
+        <li><a href="#">Specifications</a></li>
+        <li><a href="#">Certificates</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach</h5>
+      <ul>
+        <li>+604 · 419 7111</li>
+        <li>lktan.agg@gmail.com</li>
+        <li>Sungai Petani, Kedah · MY</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Asia Green Wood Sdn Bhd · 5653-H · All rights reserved</span>
+    <span>Privacy · Terms · Cookies</span>
+  </div>
+</footer>
+
+<script>
+  const navEl = document.getElementById('nav');
+  const navLogo = document.getElementById('navLogo');
+  function onScroll(){
+    if(window.scrollY > 60){
+      navEl.classList.add('scrolled');
+      if(navLogo) navLogo.src = 'assets/logo.svg';
+    } else {
+      navEl.classList.remove('scrolled');
+      if(navLogo) navLogo.src = 'assets/logo-white.svg';
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // --- Video lightbox ---
+  const envModal = document.getElementById('envVideoModal');
+  const envPlayer = document.getElementById('envVideoPlayer');
+  window.openEnvVideo = function(){
+    envModal.classList.add('open');
+    document.body.style.overflow='hidden';
+    try{ envPlayer.currentTime=0; envPlayer.play(); }catch(e){}
+  };
+  window.closeEnvVideo = function(e){
+    if(e && e.target!==envModal && !e.target.classList.contains('vmodal-close')) return;
+    envModal.classList.remove('open');
+    document.body.style.overflow='';
+    envPlayer.pause();
+  };
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && envModal.classList.contains('open')) window.closeEnvVideo(); });
+
+  const om = document.getElementById('overlayMenu');
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  function openMenu(){ om.classList.add('open'); om.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ om.classList.remove('open'); om.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  openBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  om.querySelectorAll('.omlinks a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if(e.key==='Escape' && om.classList.contains('open')) closeMenu(); });
+</script>
+</body>
+</html>
