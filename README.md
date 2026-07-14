@@ -27,17 +27,17 @@ enquiry through Resend. The browser never receives the Resend API key.
 
 ## Deployment
 
-This project deploys to the existing `agw` Worker at
-`https://agw.guanghong-teh-914.workers.dev`.
+This project deploys an API-only Worker to
+`https://agw.guanghong-teh-914.workers.dev`. It responds only to
+`POST /api/contact`; all other paths return 404. GitHub Pages serves the static
+website from the `docs/` directory.
 
 1. Install Node.js 20 or later.
 2. From this folder, run `npx wrangler login` and complete the Cloudflare browser
    sign-in.
 3. Run `npx wrangler deploy`.
 
-The deployment creates the `ASSETS` binding from `wrangler.toml`: it serves every
-file in `docs/`, while the Worker handles `/api/*`. Do not add an Assets, KV,
-D1, or Secrets Store binding manually in the dashboard.
+Do not add an Assets, KV, D1, or Secrets Store binding manually in the dashboard.
 
 ## GitHub Pages
 

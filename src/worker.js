@@ -45,7 +45,13 @@ export default {
       return withHeaders(response, corsHeaders);
     }
 
-    return env.ASSETS.fetch(request);
+    return new Response(JSON.stringify({ ok: false, error: 'Not found.' }), {
+      status: 404,
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store',
+      },
+    });
   },
 };
 
