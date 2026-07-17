@@ -51,6 +51,26 @@ then run `npx wrangler dev`. Keep `.dev.vars` out of version control.
 Resend requires the `CONTACT_FROM_EMAIL` domain to be verified before it will send
 production mail. Do not use a personal email address as the sender address.
 
+## Client content updates
+
+Clients can update the main page wording without editing the site code. The
+editable fields are in [`docs/content/`](docs/content/); see
+[`docs/content/README.md`](docs/content/README.md) for the exact GitHub Desktop
+workflow. Each page has a JSON file:
+
+- `index.json` — Home
+- `about.json` — About
+- `products.json` — Products
+- `environment.json` — Environment
+
+The pages load these content files automatically. Only edit the `value` part of
+each field; do not edit selectors or files outside `docs/content/`. Content is
+published when the change is committed and pushed to `main`.
+
+Do not give clients Cloudflare, Resend, or repository-secret access. A GitHub
+collaborator with write access can modify all repository files, so use a trusted
+account and keep all sensitive values out of Git.
+
 Plywood enquiries are sent to `lktan.agg@gmail.com` and copied to
 `lktan@asiagreenwood.com`. Biochar enquiries are sent to Mr Heng at
 `chengfa@asiagreenwood.com` and copied to `lktan.agg@gmail.com`.

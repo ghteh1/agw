@@ -1,0 +1,33 @@
+{
+  "title": "Products — AsiaGreenWood · 东园森界",
+  "fields": [
+    { "label": "Hero: heading", "selector": ".hero h1", "value": "Export-Grade<br><em>Plywood &amp; Veneer.</em>" },
+    { "label": "Hero: subtitle", "selector": ".hero .hero-sub", "value": "Manufactured in Kedah, Malaysia · Since 1964" },
+    { "label": "Product overview: Biochar", "selector": ".intro-strip .intro-item:nth-child(1) p", "value": "Carbon-negative residue from wood waste via pyrolysis — for road base, concrete and sustainable agriculture." },
+    { "label": "Product overview: Hardwood Plywood", "selector": ".intro-strip .intro-item:nth-child(2) p", "value": "Malaysian tropical hardwoods, dual-adhesive options, CE marked for global construction markets." },
+    { "label": "Product overview: Birch Face Plywood", "selector": ".intro-strip .intro-item:nth-child(3) p", "value": "Whole-piece white birch face, UV coat prefinishing available, CARB Phase 2 compliant." },
+    { "label": "Product overview: JAS plywood", "selector": ".intro-strip .intro-item:nth-child(4) p", "value": "Structural, concrete forming and general use — F★★★★ rated to Japan Agricultural Standard." },
+    { "label": "Product overview: Marine Plywood", "selector": ".intro-strip .intro-item:nth-child(5) p", "value": "BS 1088 certified, Grade A face &amp; back, WBP bonding — the marine industry benchmark." },
+    { "label": "Biochar: overview", "selector": "#biochar .prod-grid .lede", "value": "Biochar is a carbon residue derived from waste biomass through pyrolysis — heating at high temperature with limited oxygen. Produced alongside clean energy at our syngas and biochar facility, it turns wood waste into a high-value, carbon-negative material with applications across construction and agriculture." },
+    { "label": "Biochar: carbon-negative feature", "selector": "#biochar .feat-item:nth-child(1) p", "value": "<strong>Carbon-negative</strong> — locks captured carbon into a stable form that can be stored for over 1,000 years." },
+    { "label": "Biochar: wood waste feature", "selector": "#biochar .feat-item:nth-child(2) p", "value": "<strong>From our own wood waste</strong> — a circular by-product of our energy generation, with zero residue to landfill." },
+    { "label": "Biochar: dual application feature", "selector": "#biochar .feat-item:nth-child(3) p", "value": "<strong>Dual application</strong> — engineered for both civil infrastructure and high-yield sustainable agriculture." },
+    { "label": "Biochar: road base heading", "selector": "#biochar .sub-card:nth-child(1) h4", "value": "Road Base &amp; Concrete Applications" },
+    { "label": "Biochar: road base copy", "selector": "#biochar .sub-card:nth-child(1) p", "value": "By integrating biochar into road bases and concrete, we build stronger, more durable infrastructure with a significantly lower carbon footprint. It enhances road stability by improving load distribution and reducing moisture damage, and reinforces concrete structures without affecting setting times. Replacing traditional fillers with biochar (typically 0.5–5% by weight) delivers high-performance civil engineering solutions that are as resilient as they are responsible." },
+    { "label": "Biochar: fertiliser heading", "selector": "#biochar .sub-card:nth-child(2) h4", "value": "Fertiliser &amp; Soil Application Performance" },
+    { "label": "Biochar: fertiliser copy", "selector": "#biochar .sub-card:nth-child(2) p", "value": "Biochar acts as a powerful “nutrient sponge” that boosts fertiliser efficiency while protecting the environment. Blending just 2–5% with NPK fertilisers can reduce total fertiliser usage by 20–30%, locking in nutrients and releasing them slowly to plants. Fully compatible with organic, mineral and liquid fertilisers, it improves soil structure and stores carbon for over 1,000 years — a definitive solution for high-yield, sustainable agriculture." },
+    { "label": "Hardwood Plywood: heading", "selector": "#hardwood h2", "value": "Hardwood Plywood" },
+    { "label": "Hardwood Plywood: overview", "selector": "#hardwood .prod-grid .lede", "value": "Our flagship export product — manufactured using selected Malaysian tropical hardwoods in red and white species. Produced with Japanese machinery and rigorously graded for uniformity in grade and colour, making it the most sought-after plywood on international markets." },
+    { "label": "Birch Face Plywood: heading", "selector": "#birch h2", "value": "Birch Face Plywood" },
+    { "label": "Birch Face Plywood: overview", "selector": "#birch .prod-grid .lede", "value": "Whole-piece white birch face veneer — no finger joints, no patches. The clean, pale aesthetic of natural birch makes this panel ideal for furniture, cabinetry, and interior fit-out. UV coat prefinishing is available on one or both faces for a ready-to-use surface direct from the mill." },
+    { "label": "JAS Plywood: heading", "selector": "#jas h2", "value": "JAS Certification Plywood" },
+    { "label": "JAS Plywood: overview", "selector": "#jas .jas-outer .lede", "value": "Manufactured to meet Japan Agricultural Standard (JAS Law) requirements, our JAS plywood covers three purpose-built categories — Structural, Concrete Forming, and General Ordinary Use. All products carry F★★★★ rating, the highest Japanese formaldehyde emission standard." },
+    { "label": "Marine Plywood: heading", "selector": "#marine h2", "value": "Marine Plywood" },
+    { "label": "Marine Plywood: overview", "selector": "#marine .prod-grid .lede", "value": "Holding BS 1088 — the internationally recognised benchmark for marine-grade plywood — our marine panels feature Grade A veneer on both face and back, bonded with WBP Phenol Formaldehyde adhesive for a fully waterproof, permanent bond. Q-Mark certification provides independent third-party verification of every batch." },
+    { "label": "Certifications: heading", "selector": "#certifications h2", "value": "Certified to the highest global standards." },
+    { "label": "Certifications: overview", "selector": "#certifications > p", "value": "Every panel we ship is backed by internationally recognised certification bodies. From sustainable forest sourcing to formaldehyde emission control and marine-grade quality assurance — our credentials are independently verified, not self-declared." },
+    { "label": "Applications: heading", "selector": "#applications h2", "value": "Where our panels are specified." },
+    { "label": "Call to action: heading", "selector": "#cta h2", "value": "Ready to specify?" },
+    { "label": "Call to action: copy", "selector": "#cta .cta-body", "value": "Tell us your grade, adhesive type, sheet size and volume — we'll respond with pricing and lead times within 24 hours." }
+  ]
+}
