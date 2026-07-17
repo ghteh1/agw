@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-content-page="index">
 <head>
 <meta charset="utf-8" />
 <link rel="icon" type="image/svg+xml" href="assets/logomark.svg">
@@ -1113,5 +1113,6 @@
   om.querySelectorAll('.omlinks a').forEach(a=>a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e=>{ if(e.key==='Escape' && om.classList.contains('open')) closeMenu(); });
 </script>
+<script src="content/content-loader.js"></script>
 </body>
 </html>
