@@ -29,7 +29,7 @@ export async function onContactRequest(request, env) {
 
     const isBiocharEnquiry = interest.toLowerCase().includes('biochar');
     const recipients = isBiocharEnquiry
-      ? { to: ['sales@asiagreenwood.com'], cc: ['chengfa@asiagreenwood.com', 'lktan.agg@gmail.com', 'lktan@asiagreenwood.com'] }
+      ? { to: ['chengfa@asiagreenwood.com'], cc: ['sales@asiagreenwood.com', 'lktan.agg@gmail.com', 'lktan@asiagreenwood.com'] }
       : { to: ['sales@asiagreenwood.com'], cc: ['lktan.agg@gmail.com', 'lktan@asiagreenwood.com'] };
 
     const html = `
