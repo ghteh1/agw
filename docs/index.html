@@ -13,6 +13,21 @@
   gtag('config', 'G-NBHZ0KVLM4');
 </script>
 <title>AsiaGreenWood · 东园森界 — Responsibly sourced plywood from Malaysia</title>
+<meta name="description" content="Asia Green Wood is a Malaysian manufacturer of export-grade plywood, veneer and biomass products, responsibly sourced and made in Kedah since 1964." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://asiagreenwood.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Asia Green Wood" />
+<meta property="og:title" content="Asia Green Wood | Sustainable Plywood &amp; Veneer from Malaysia" />
+<meta property="og:description" content="Export-grade plywood, veneer and biomass products responsibly made in Kedah, Malaysia since 1964." />
+<meta property="og:url" content="https://asiagreenwood.com/" />
+<meta property="og:image" content="https://asiagreenwood.com/assets/og-asia-green-wood.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="675" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Asia Green Wood Sdn. Bhd.","url":"https://asiagreenwood.com/","logo":"https://asiagreenwood.com/assets/logo-white.svg","email":"sales@asiagreenwood.com","telephone":"+6044197111","foundingDate":"1964","areaServed":"Worldwide","description":"Malaysian manufacturer of export-grade plywood, veneer and biomass products."}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
@@ -179,6 +194,7 @@
   .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid rgba(243,234,217,.4);border-radius:999px;font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);backdrop-filter:blur(6px)}
   .chip .sq{width:6px;height:6px;background:var(--moss-2);border-radius:1px}
   .hero h1{color:var(--cream);max-width:18ch;text-align:center;text-wrap:balance}
+  .hero-copy .hero-title{margin:clamp(10px,1.5vh,18px) auto 0;max-width:28ch;font-size:clamp(22px,2.4vw,38px);line-height:1.16}
   .hero h1 span.ital{font-style:italic;color:var(--cream)}
   .hero-copy .sig{margin:clamp(16px,2.5vh,36px) auto 0;max-width:58ch;color:rgba(243,234,217,.88);font-size:clamp(15px,1.1vw,18px);line-height:1.75}
 
@@ -541,12 +557,13 @@
 <!-- Hero -->
 <section class="hero" id="top">
   <div class="hero-media">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/og-asia-green-wood.jpg">
     <source src="assets/AGW-MYForest.mp4" type="video/mp4">
   </video>
   </div>
   <div class="hero-copy">
     <img src="assets/logo-white.svg" alt="Asia Green Wood Sdn. Bhd." class="hero-logo"/>
+    <h1 class="hero-title">Sustainable plywood, veneer &amp; biomass products from Malaysia.</h1>
     <div class="top">
       <span class="chip"><span class="sq"></span> Malaysia · Since 1964</span>
       <span class="chip">Plywood · Veneer · Panels</span>
@@ -693,7 +710,7 @@
 <!-- 04 Asia -->
 <section id="asia" class="env">
   <div class="media">
-    <img src="assets/cabin.png" alt="Asia — ancient heritage of forests"/>
+    <img loading="lazy" decoding="async" src="assets/cabin.webp" alt="Asia — ancient heritage of forests"/>
     <div class="lab"><span>Asia · 亚洲</span><span>N 5°38′ · E 100°29′</span></div>
   </div>
   <div class="copy">
@@ -711,10 +728,10 @@
 <!-- 05 Green -->
 <div id="green" style="position:relative;background:var(--paper);overflow:hidden">
   <!-- Layer 1: mountain silhouette divider -->
-  <img src="assets/env-banner.png" aria-hidden="true"
+  <img src="assets/env-banner.png" alt="" aria-hidden="true"
        style="display:block;width:100%;height:auto;position:relative;z-index:1;pointer-events:none"/>
   <!-- Layer 2: pine forest on top -->
-  <img src="assets/env-wide.png" aria-hidden="true"
+  <img src="assets/env-wide.png" alt="" aria-hidden="true"
        style="display:block;width:100%;height:auto;position:relative;z-index:2;margin-top:-10vw;pointer-events:none"/>
   <!-- Text overlay — centred -->
   <div style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(72px,9vw,140px) var(--pad-x)">
@@ -737,7 +754,7 @@
     </p>
   </div>
   <div class="media">
-    <img src="assets/wood-collage-1.png" alt="Planting trees together"/>
+    <img loading="lazy" decoding="async" src="assets/wood-collage-1.webp" alt="Planting trees together"/>
     <div class="chip-img">Wood culture · 木文化</div>
   </div>
 </section>
