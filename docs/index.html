@@ -254,6 +254,28 @@
   body[data-hero="overlay"] .hero-meta .k{color:var(--cream)}
   body[data-hero="overlay"] .hero-meta .v{color:rgba(243,234,217,.7)}
 
+  /* Short desktop windows: keep the hero copy and statistics in separate lanes. */
+  @media (min-width:901px) and (max-height:760px){
+    .hero{padding-bottom:72px}
+    .hero-copy{min-height:100%;padding-top:clamp(42px,7vh,68px);padding-bottom:0}
+    .hero-logo{width:min(480px,34vw);min-width:0;margin-bottom:8px}
+    .hero-copy .hero-title{margin-top:6px;max-width:32ch;font-size:clamp(19px,2vw,30px);line-height:1.12}
+    .hero-copy .top{gap:8px;margin-bottom:0}
+    .chip{padding:5px 10px;font-size:9px;letter-spacing:.14em}
+    .hero-meta{bottom:clamp(34px,7vh,56px)}
+    .hero-meta .m{padding-top:16px}
+    .hero-meta .k{font-size:clamp(18px,1.7vw,26px)}
+    .hero-meta .v{margin-top:8px;font-size:9px;letter-spacing:.13em}
+  }
+  @media (min-width:901px) and (max-height:620px){
+    .hero-copy{padding-top:30px}
+    .hero-logo{width:min(400px,30vw)}
+    .hero-copy .hero-title{font-size:20px}
+    .hero-meta{bottom:24px}
+    .hero-meta .m{padding-top:12px}
+    .hero-meta .v{margin-top:6px}
+  }
+
   section{padding-block:clamp(72px,9vw,140px);padding-inline:var(--pad-x);position:relative}
 
   /* --- Curve / wave section dividers (only hero→heritage and contact→footer) --- */
